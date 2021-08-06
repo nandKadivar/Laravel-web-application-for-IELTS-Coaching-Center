@@ -1,0 +1,41 @@
+main {
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.test {
+    background-color: #45489a;
+}
+
+.login-card {
+    /* flex-direction: column; */
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);
+    padding: 10px;
+}
+
+.input-card {
+    /* background-color: #45489a; */
+    width: 80%;
+}
+
+
+/* .login-card {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);
+    padding: 10px;
+} */
+
+
+/* .input-card {
+    margin-top: 10px;
+    background-color: #45489a;
+    width: 80%;
+} */
+
+.input-group {
+    /* background-color: #000; */
+    width: 100%;
+}
