@@ -4,8 +4,6 @@ main {
 }
 
 .login-card {
-    /* flex-direction: column; */
-    /* background-color: #513245; */
     width: 30%;
     background-color: #fff;
     box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);
@@ -17,28 +15,10 @@ main {
     width: 100%;
 }
 
-
-/* .login-card {
-    display: flex;
-    background-color: #fff;
-    box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);
-    padding: 10px;
-} */
-
-
-/* .input-card {
-    margin-top: 10px;
-    background-color: #45489a;
-    width: 80%;
-} */
-
 .form-group {
     /* background-color: #45489a; */
     width: 90%;
-    /* margin: 0; */
 }
-
-.label {}
 
 .input-container {
     /* border: 2px solid #45489a; */
@@ -48,7 +28,6 @@ main {
     width: 100%;
     padding: 5px;
     height: 47px;
-    /* border-left: 5px solid #3ea2f9; */
 }
 
 .input-icon {
@@ -61,7 +40,6 @@ main {
     width: 85%;
     border: 0px;
     background-color: transparent;
-    /* border-radius: 5px; */
 }
 
 .input-field:focus {
@@ -78,4 +56,41 @@ main {
 
 .remenber-me-container {
     width: 90%;
+}
+
+.card-1 {
+    padding: 25px;
+    background-color: #fff;
+    height: 100px;
+    width: 48%;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 6px rgba(0, 0, 0, .2); */
+}
+
+.card-2 {
+    padding: 25px;
+    background-color: #fff;
+    height: 100px;
+    width: 31%;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 6px rgba(0, 0, 0, .2); */
+}
+
+.card-3 {
+    padding: 10px;
+    background-color: #fff;
+    width: 20%;
+    /* height: 50px; */
+    border-radius: 5px;
+}
+
+.card-1:hover,
+.card-2:hover,
+.card-3:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
+}
+
+.card-label:hover {
+    border-bottom: 1px solid #f13226;
 }

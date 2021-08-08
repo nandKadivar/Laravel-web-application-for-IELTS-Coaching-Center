@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="182" height="99" viewBox="0 0 182 99">
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="69" viewBox="0 0 182 99">
   <g id="Group_1" data-name="Group 1" transform="translate(-878 -249)">
+    <text id="IELTS-2" data-name="IELTS" transform="translate(880 330)" fill="none" stroke="#fff" stroke-width="1" font-size="78" font-family="Impact" letter-spacing="0.064em"><tspan x="0" y="0">IELTS</tspan></text>
     <text id="IELTS" transform="translate(884 328)" fill="#e31834" font-size="78" font-family="Impact" letter-spacing="0.064em"><tspan x="0" y="0">IELTS</tspan></text>
-    <text id="IELTS-2" data-name="IELTS" transform="translate(880 330)" fill="none" stroke="#333" stroke-width="2" font-size="78" font-family="Impact" letter-spacing="0.064em"><tspan x="0" y="0">IELTS</tspan></text>
   </g>
 </svg>
