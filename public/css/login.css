@@ -72,6 +72,10 @@ main {
     width: 100%;
 }
 
+.error-container {
+    width: 90%;
+}
+
 .remenber-me-container {
     width: 90%;
 }

@@ -18,20 +18,15 @@ Login
                         <div class="d-flex flex-row align-items-center justify-content-between input-container">
                             <div class="input-icon"><i class="fas fa-user"></i></div>
                             <input id="email" type="email" class="input-field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                            @error('email')
+                            {{-- @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="d-flex flex-row align-items-center justify-content-between input-container mt-4">
                             <div class="input-icon"><i class="fas fa-key"></i></div>
                             <input id="password" type="password" class="input-field @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password" />
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
                         <div class="d-flex flex-row align-items-center justify-content-end mt-1 forget-password-container">
                             @if (Route::has('password.request'))
@@ -41,6 +36,16 @@ Login
                             @endif
                         </div>
                     </div>
+                    @error('email')
+                        <div class="d-flex flex-row align-items-center justify-content-center error-container my-1 alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    @error('password')
+                        <div class="d-flex flex-row align-items-center justify-content-center error-container my-1 alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="d-flex flex-row align-items-center justify-content-between remenber-me-container my-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
