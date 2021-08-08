@@ -3,12 +3,9 @@ main {
     background-color: #f7f7f7;
 }
 
-.test {
-    background-color: #45489a;
-}
-
 .login-card {
     /* flex-direction: column; */
+    /* background-color: #513245; */
     width: 30%;
     background-color: #fff;
     box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);
@@ -16,8 +13,8 @@ main {
 }
 
 .input-card {
-    /* background-color: #45489a; */
-    width: 80%;
+    /* background-color: #856321; */
+    width: 100%;
 }
 
 
@@ -35,7 +32,46 @@ main {
     width: 80%;
 } */
 
-.input-group {
-    /* background-color: #000; */
+.form-group {
+    /* background-color: #45489a; */
+    width: 90%;
+    /* margin: 0; */
+}
+
+.label {}
+
+.input-container {
+    /* border: 2px solid #45489a; */
+    border-radius: 3px;
+    background-color: #d8d9eb;
+    /* background-color: #fff; */
     width: 100%;
+    padding: 5px;
+    height: 47px;
+    /* border-left: 5px solid #3ea2f9; */
+}
+
+.input-icon {
+    padding-left: 10px;
+    font-size: 18px;
+    color: #5a5a5a;
+}
+
+.input-field {
+    width: 85%;
+    border: 0px;
+    background-color: transparent;
+    /* border-radius: 5px; */
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.forget-password-container {
+    width: 100%;
+}
+
+.remenber-me-container {
+    width: 90%;
 }

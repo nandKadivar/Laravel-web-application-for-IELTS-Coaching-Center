@@ -7,21 +7,24 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/371fe3a801.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/auth.css') }}" rel="stylesheet" type="text/css" />
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="app">
+    <div>
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -76,9 +79,9 @@
             </div>
         </nav> --}}
 
-        <main class="d-flex justify-content-center align-items-center" style="height: 100vh;background-color: #f7f7f7">
+        {{-- <main class="d-flex justify-content-center align-items-center" style="height: 100vh;background-color: #f7f7f7"> --}}
             @yield('content')
-        </main>
+        {{-- </main> --}}
     </div>
 </body>
 </html>
