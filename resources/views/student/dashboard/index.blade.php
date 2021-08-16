@@ -7,7 +7,7 @@ Dashboard
 @section('content')
 <section class="d-flex flex-column p-2 align-items-center" style="background-color: #333; height: 22vh; box-shadow: 3px 5px 6px rgba(0, 0, 0, .2);">
     <div class="d-flex flex-row align-items-center justify-content-between col-md-12 p-2">
-        <img src="/svg/Group 1.svg" />
+        <img src="/media/logos/logo-1.svg" />
         <div class="d-flex flex-row align-items-center justify-content-around col-md-1">
             <a href="" class="">
                 <i class="fas fa-bell" style="font-size: 24px; color: #797979"></i>
@@ -17,8 +17,8 @@ Dashboard
             </a>
         </div>
     </div>
-    <div class="d-flex flex-row align-items-center justify-content-start col-md-8 p-2">
-        <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
+    {{-- <div class="d-flex flex-row align-items-center justify-content-start col-md-8 p-2"> --}}
+        {{-- <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
             Listening
         </a>
         <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
@@ -29,9 +29,19 @@ Dashboard
         </a>
         <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
             Speaking
-        </a>
-    </div>
+        </a> --}}
+        <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">Library</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
+        </div>
+    {{-- </div> --}}
 </section>
+
 <section class="d-flex flex-column justify-content-start" style="background-color: #f7f7f7; height: 78vh;">
     <div class="d-flex flex-row align-items-center justify-content-between col-md-12 p-4">
         <div style="color: #808080; font-size: 18px;">Resources</div>
@@ -39,28 +49,28 @@ Dashboard
             
         </div>
     </div>
-    <div class="d-flex flex-row align-items-center justify-content-between col-md-12 p-4">
+    <div class="d-flex flex-row flex-wrap align-items-center justify-content-between col-md-12 p-4">
         <div class="d-flex flex-column align-items-start justify-content-start col-md-7" style="height: 500px;">
             <div class="d-flex flex-row align-items-center justify-content-between col-md-12">
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-5 card-1">
+                <div class="d-flex flex-row align-items-center justify-content-start card-1">
                     <i class="fas fa-users" style="font-size: 35px; color: #4ec34a"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: arial; font-weight: 500;">Classes</p>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Classes</p>
                 </div>
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-5 card-1">
+                <div class="d-flex flex-row align-items-center justify-content-start card-1">
                     <i class="fas fa-pencil-alt" style="font-size: 35px; color: #f13226"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: arial; font-weight: 500;">Mock Test</p>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; margin-bottom: 0; font-family: arial; font-weight: 500;">Mock Test</p>
                 </div>
             </div>
             <div class="mt-5 d-flex flex-row align-items-center justify-content-between col-md-12">
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
+                <div class="d-flex flex-row align-items-center justify-content-start card-2">
                     <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: arial; font-weight: 500;">Schedule</p>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Schedule</p>
                 </div>
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
+                <div class="d-flex flex-row align-items-center justify-content-start card-2">
                     <i class="fas fa-rocket" style="font-size: 35px; color: #45489a"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: arial; font-weight: 500;">Progress</p>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Progress</p>
                 </div>
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
+                <div class="d-flex flex-row align-items-center justify-content-start card-2">
                     4
                 </div>
             </div>
@@ -68,7 +78,7 @@ Dashboard
                 <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2" style="background-color: #4c6ef4">
                     {{-- <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i> --}}
                     <i class="fab fa-telegram" style="font-size: 45px; color: #fff"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: Dancing Script; font-weight: bold; color: #fff">Join Community</p>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Join Community</p>
                 </div>
                 {{-- <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
                     <i class="fas fa-rocket" style="font-size: 35px; color: #45489a"></i>

@@ -7,7 +7,7 @@ Login
 <main class="d-flex align-items-center justify-content-center" style="background-color: #f1f1f1">
     <div class="d-flex flex-column align-items-center login-card">
         <div>
-            <img src="/svg/Group 11.svg" />
+            <img src="/media/logos/logo-3.svg" />
         </div>
 
         <div class="align-items-center justify-content-center mt-5" style="width: 80%">
