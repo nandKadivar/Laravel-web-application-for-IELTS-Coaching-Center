@@ -58,6 +58,34 @@ main {
     width: 90%;
 }
 
+.search-container {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 50px;
+}
+
+.search-box {
+    margin-left: 20px;
+    height: 35px;
+    border: 0px;
+    font-size: 20px;
+    width: 80%;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.nav-icons i {
+    font-size: 24px;
+    color: #797979;
+    transition: all 0.2 ease-in;
+}
+
+.nav-icons:hover i {
+    color: #fff;
+}
+
 .card-1 {
     padding: 25px;
     background-color: #fff;
@@ -84,13 +112,50 @@ main {
     border-radius: 5px;
 }
 
+.card-4 {
+    padding: 25px;
+    background-color: #fff;
+    height: 100px;
+    width: 48%;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 6px rgba(0, 0, 0, .2); */
+}
+
 .card-1:hover,
 .card-2:hover,
-.card-3:hover {
+.card-3:hover,
+.card-4:hover {
     cursor: pointer;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
 }
 
-.card-label:hover {
+.card-1:hover .card-label,
+.card-2:hover .card-label,
+.card-3:hover .card-label {
     border-bottom: 2px solid #f13226;
+}
+
+.attend-live-class-btn {
+    border: 2px solid #f13226;
+    border-radius: 5px;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.attend-live-class-btn-text {
+    color: #f13226;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.attend-live-class-btn:hover {
+    background-color: #f13226;
+}
+
+.attend-live-class-btn:hover .attend-live-class-btn-text {
+    color: #fff;
 }

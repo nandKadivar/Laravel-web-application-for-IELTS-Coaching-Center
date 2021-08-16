@@ -9,15 +9,26 @@ Dashboard
     <div class="d-flex flex-row align-items-center justify-content-between col-md-12 p-2">
         <img src="/media/logos/logo-1.svg" />
         <div class="d-flex flex-row align-items-center justify-content-around col-md-1">
-            <a href="" class="">
-                <i class="fas fa-bell" style="font-size: 24px; color: #797979"></i>
+            <a href="" class="nav-icons">
+                <i class="fas fa-bell"></i>
             </a>
-            <a href="" class="">
-                <i class="fas fa-user-circle" style="font-size: 24px; color: #797979"></i>
+            <a href="" class="nav-icons">
+                <i class="fas fa-user-circle"></i>
             </a>
         </div>
     </div>
-    {{-- <div class="d-flex flex-row align-items-center justify-content-start col-md-8 p-2"> --}}
+    {{-- <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#" style="color: #f7f7f7">Home</a></li>
+              <li class="breadcrumb-item"><a href="#" style="color: #f7f7f7">Library</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </div> --}}
+    <div class="d-flex flex-row align-items-center justify-content-start col-md-8 p-2 search-container">
+        <i class="fas fa-search" style="font-size: 25px; margin-left: 10px; color: #797979"></i>
+        <input type="text" class="search-box" placeholder="Search">
         {{-- <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
             Listening
         </a>
@@ -30,19 +41,10 @@ Dashboard
         <a href="" class="nav-link" style="color: #f7f7f7; text-decoration: none; margin-right: 50px; font-size: 18px;">
             Speaking
         </a> --}}
-        <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-            </nav>
-        </div>
-    {{-- </div> --}}
+    </div>
 </section>
 
-<section class="d-flex flex-column justify-content-start" style="background-color: #f7f7f7; height: 78vh;">
+<section class="d-flex flex-column justify-content-start" style="background-color: #f7f7f7;padding-top: 10px">
     <div class="d-flex flex-row align-items-center justify-content-between col-md-12 p-4">
         <div style="color: #808080; font-size: 18px;">Resources</div>
         <div class="" style="border-top: 1px solid #808080ab; width: 94%; margin-top: 6px;">
@@ -71,14 +73,20 @@ Dashboard
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Progress</p>
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-start card-2">
-                    4
+                    <i class="fas fa-video" style="font-size: 35px; color: #ff5722"></i>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Recordings</p>
                 </div>
             </div>
-            <div class="mt-5 d-flex flex-row align-items-center justify-content-between col-md-12">
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2" style="background-color: #4c6ef4">
+            <div class="mt-5 d-flex flex-row flex-wrap align-items-center justify-content-between col-md-12">
+                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4c6ef4">
                     {{-- <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i> --}}
                     <i class="fab fa-telegram" style="font-size: 45px; color: #fff"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Join Community</p>
+                </div>
+                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4caf50">
+                    {{-- <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i> --}}
+                    <i class="fab fa-whatsapp" style="font-size: 45px; color: #fff"></i>
+                    <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Ask doubt</p>
                 </div>
                 {{-- <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
                     <i class="fas fa-rocket" style="font-size: 35px; color: #45489a"></i>
@@ -89,9 +97,11 @@ Dashboard
                 </div> --}}
             </div>
         </div>
-        <div class="d-flex flex-column align-items-center col-md-4" style="height: 500px;">
+        <div class="d-flex flex-column align-items-center col-md-4" style="height: 500px">
             <div class="d-flex align-items-center justify-content-center col-md-12" style="height: 200px;">
-                1
+                <div class="d-flex flex-row align-items-center justify-content-center attend-live-class-btn">
+                    <span class="attend-live-class-btn-text">Attend Live Class Now !</span>
+                </div>
             </div>
             <div class="d-flex flex-row align-items-center justify-content-between col-md-12 py-4">
                 <div style="color: #808080; font-size: 18px;">Materials</div>
