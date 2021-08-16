@@ -30,7 +30,7 @@ Login
                         </div>
                         <div class="d-flex flex-row align-items-center justify-content-end mt-1 forget-password-container">
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" style="color: #333" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
@@ -55,7 +55,7 @@ Login
                             </label>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-primary" style="width: 90px; height: 40px">
+                            <button type="submit" class="btn btn-danger" style="width: 90px; height: 40px">
                                 {{ __('Login') }}
                             </button>
                         </div>
@@ -63,7 +63,7 @@ Login
                     @if (Route::has('register'))
                     <div class="d-flex flex-row align-items-center justify-content-center register-link-container mt-3">
                         <p class=""> Don't have an account? 
-                            <a class="btn-link" href="{{ route('register') }}">create account</a>
+                            <a class="btn-link" style="color: #333" href="{{ route('register') }}">create account</a>
                         </p>
                     </div>
                     @endif

@@ -17,7 +17,8 @@
   <g id="Group_15" data-name="Group 15" transform="translate(-1574.996 -756)">
     <path id="Path_1" data-name="Path 1" d="M23.557,17.942,78.779,0,56.606,54.647,0,70.933Z" transform="translate(1622.46 756) rotate(42)" fill="url(#linear-gradient)"/>
     <rect id="Rectangle_5" data-name="Rectangle 5" width="7.364" height="49.096" transform="translate(1663.947 807.738)" fill="url(#linear-gradient)"/>
-    <path id="Path_2" data-name="Path 2" d="M2597.927,393.277s6.049,25.3,6.966,25.846,30.731,10.991,30.731,10.991l24.078-10.991,6.049-25.846L2633.608,410.5Z" transform="translate(-1004.966 431.314)" fill="#3ea2f9"/>
+    <!-- <path id="Path_2" data-name="Path 2" d="M2597.927,393.277s6.049,25.3,6.966,25.846,30.731,10.991,30.731,10.991l24.078-10.991,6.049-25.846L2633.608,410.5Z" transform="translate(-1004.966 431.314)" fill="#3ea2f9"/> -->
+    <path id="Path_2" data-name="Path 2" d="M2597.927,393.277s6.049,25.3,6.966,25.846,30.731,10.991,30.731,10.991l24.078-10.991,6.049-25.846L2633.608,410.5Z" transform="translate(-1004.966 431.314)" fill="#dc3546"/>
   </g>
 </svg>
 
