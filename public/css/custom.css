@@ -310,3 +310,40 @@ textarea::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
 }
+
+audio {
+    width: 100%;
+}
+
+audio:focus {
+    outline: none;
+}
+
+.answer-sheet-container {
+    padding: 15px;
+    overflow-y: auto;
+    height: 600px;
+}
+
+.answer-sheet-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.answer-sheet-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+}
+
+.answer-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+}
+
+.index {
+    font-weight: bold;
+}

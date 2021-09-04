@@ -31,3 +31,11 @@ Route::get('/logout',[LoginController::class, 'logout'])->name('student.logout')
 Route::get('/mock-test/writing-task-1',function () {
     return view('student.mocktest.writingtask1');
 })->middleware('auth');
+
+Route::get('/mock-test/listening-task',function () {
+    return view('student.mocktest.listeningtask');
+})->middleware('auth');
+
+Route::get('/mock-test/reading-task',function () {
+    return view('student.mocktest.readingtask');
+})->middleware('auth');
