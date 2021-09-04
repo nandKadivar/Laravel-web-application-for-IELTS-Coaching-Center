@@ -248,3 +248,58 @@ textarea::-webkit-scrollbar-thumb {
 .file-upload:hover {
     cursor: pointer;
 }
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+
+.input-group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #45489a; */
+    width: 90%;
+    /* height: 50px; */
+}
+
+.input-group-label {
+    width: 100%;
+    /* padding: 5px; */
+    font-weight: bold;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-type-2 {
+    width: 40%;
+    height: 38px;
+    padding: 10px;
+    background-color: #fff;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.input-type-2:focus,
+.select-input:focus {
+    outline: none;
+}
+
+.select-input {
+    width: 100%;
+    height: 38px;
+    padding: 10px;
+    background-color: #fff;
+    border: 0px;
+    border-radius: 3px;
+}
