@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title')
+    Verify email
+@endsection
 @section('content')
 
 <main class="d-flex align-items-center justify-content-center" style="background-color: #f1f1f1">
