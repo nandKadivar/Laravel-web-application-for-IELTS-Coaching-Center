@@ -12,9 +12,19 @@ Dashboard
             <a href="" class="nav-icons">
                 <i class="fas fa-bell"></i>
             </a>
-            <a href="" class="nav-icons">
+            {{-- <a href="" class="nav-icons">
+                <i class="fas fa-user-circle"></i>
+            </a> --}}
+            <a class="nav-icons" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
                 <i class="fas fa-user-circle"></i>
             </a>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {{-- <p style="align-self: center">Hii, {{Illuminate\Support\Facades\Auth::user()->fname}}</p> --}}
+                <a class="dropdown-item" href="#"><i class="fas fa-id-card-alt" style="color: #797979"></i> Profile</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt" style="color: #797979"></i> Logout</a>
+                {{-- <a class="dropdown-item" href="#">Something else here</a> --}}
+            </div>
         </div>
     </div>
     {{-- <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">

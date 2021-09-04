@@ -23,7 +23,7 @@ Auth::routes();
 
 Route::get('/dashboard',function () {
     return view('student.dashboard.index');
-});
+})->name('dashboard')->middleware('auth');
 
 Route::get('/mock-test/writing-task-1',function () {
     return view('student.mocktest.writingtask1');
