@@ -51,7 +51,7 @@ Reading Test
                 </audio>
             </div> --}}
             <div class="answer-sheet-container" id="div1">
-                <form action="#" autocomplete="off">
+                <form id="reading-test" action="#" autocomplete="off">
                     @csrf
                     <div class="d-flex flex-row align-items-center justify-content-between" style="width: 100%;">
                         <div class="answer-field">
@@ -292,6 +292,7 @@ Reading Test
             setInterval(function(){
                 if(s==00 && m==00){
                     alert('Time up');
+                    document.getElementById("reading-test").submit();
                 }
                 else if(s==00 && m>=01){
                     s=59;

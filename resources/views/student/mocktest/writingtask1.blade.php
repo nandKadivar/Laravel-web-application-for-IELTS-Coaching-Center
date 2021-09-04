@@ -18,7 +18,7 @@ Writing Task 1
                 </nav>
             </div>
             <div class="col-md-12" style="padding: 20px">
-                <form action="">
+                <form id="writing-task1-test" action="">
                     @csrf
                     <textarea class="text-editor" cols="10" rows="10" placeholder="Write your response here ..."></textarea>
                     <div class="d-flex flex-row align-items-center justify-content-between col-md-12">
@@ -75,6 +75,7 @@ Writing Task 1
             setInterval(function(){
                 if(s==00 && m==00){
                     alert('Time up');
+                    document.getElementById("writing-task1-test").submit();
                 }
                 else if(s==00 && m>=01){
                     s=59;
