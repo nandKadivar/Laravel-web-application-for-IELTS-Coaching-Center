@@ -36,6 +36,13 @@ Login
                             @endif
                         </div>
                     </div>
+                    
+                    @if(session('msg_success') || session('msg_fail'))
+                        <div class="alert alert-custom {{session('msg_success')? 'alert-success':'alert-danger'}} fade show" role="alert">
+                            <div class="alert-text">{{session('msg_success')? session('msg_success') : session('msg_fail')}}</div>
+                        </div>
+                    @endif
+                    
                     @error('email')
                         <div class="d-flex flex-row align-items-center justify-content-center error-container my-1 alert alert-danger">
                             {{ $message }}

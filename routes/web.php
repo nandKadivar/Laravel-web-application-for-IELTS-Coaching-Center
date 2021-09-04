@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return Redirect::route('login');
-});
+})->name('student.login');
 
 Auth::routes();
 
@@ -25,6 +26,8 @@ Route::get('/dashboard',function () {
     return view('student.dashboard.index');
 })->name('dashboard')->middleware('auth');
 
+Route::get('/logout',[LoginController::class, 'logout'])->name('student.logout')->middleware('auth');
+
 Route::get('/mock-test/writing-task-1',function () {
     return view('student.mocktest.writingtask1');
-});
+})->middleware('auth');

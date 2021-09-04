@@ -20,22 +20,12 @@ Dashboard
             </a>
             
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {{-- <p style="align-self: center">Hii, {{Illuminate\Support\Facades\Auth::user()->fname}}</p> --}}
                 <a class="dropdown-item" href="#"><i class="fas fa-id-card-alt" style="color: #797979"></i> Profile</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt" style="color: #797979"></i> Logout</a>
-                {{-- <a class="dropdown-item" href="#">Something else here</a> --}}
+                <a class="dropdown-item" href="{{ route('student.logout') }}"><i class="fas fa-sign-out-alt" style="color: #797979"></i> Logout</a>
             </div>
         </div>
     </div>
-    {{-- <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#" style="color: #f7f7f7">Home</a></li>
-              <li class="breadcrumb-item"><a href="#" style="color: #f7f7f7">Library</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav>
-    </div> --}}
+    
     <div class="d-flex flex-row align-items-center justify-content-start col-md-8 p-2 search-container">
         <i class="fas fa-search" style="font-size: 25px; margin-left: 10px; color: #797979"></i>
         <input type="text" class="search-box" placeholder="Search">
@@ -89,22 +79,13 @@ Dashboard
             </div>
             <div class="mt-5 d-flex flex-row flex-wrap align-items-center justify-content-between col-md-12">
                 <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4c6ef4">
-                    {{-- <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i> --}}
                     <i class="fab fa-telegram" style="font-size: 45px; color: #fff"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Join Community</p>
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4caf50">
-                    {{-- <i class="fas fa-calendar-alt" style="font-size: 35px; color: #ffc107"></i> --}}
                     <i class="fab fa-whatsapp" style="font-size: 45px; color: #fff"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Ask doubt</p>
                 </div>
-                {{-- <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
-                    <i class="fas fa-rocket" style="font-size: 35px; color: #45489a"></i>
-                    <p style="font-size: 25px;margin-left: 20px; font-family: arial; font-weight: 500;">Progress</p>
-                </div>
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-2">
-                    4
-                </div> --}}
             </div>
         </div>
         <div class="d-flex flex-column align-items-center col-md-4" style="height: 500px">
