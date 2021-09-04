@@ -106,5 +106,37 @@
             @yield('content')
         {{-- </main> --}}
     </div>
+    <script>
+        var second_division = document.getElementById("div2");
+        second_division.style.display="none";
+        
+        function showResult(){
+            var element = document.getElementById("2");
+            var second_element = document.getElementById("1");
+
+            var division = document.getElementById("div1");
+            var second_division = document.getElementById("div2");
+
+            element.classList.add("active");
+            second_element.classList.remove("active");
+
+            division.style.display = 'none';
+            second_division.style.display = 'flex';
+        }
+
+        function showQuestion(){
+            var element = document.getElementById("1");
+            var second_element = document.getElementById("2");
+
+            var division = document.getElementById("div2");
+            var second_division = document.getElementById("div1");
+
+            element.classList.add("active");
+            second_element.classList.remove("active");
+
+            division.style.display = 'none';
+            second_division.style.display = 'flex';
+        }
+    </script>
 </body>
 </html>

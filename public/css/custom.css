@@ -177,6 +177,7 @@ main {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    transition: background-color .2s ease-in;
 }
 
 .menu-btn.active .menu-btn-text {
@@ -186,6 +187,10 @@ main {
 }
 
 .question-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #fff;
     /* height: 200px; */
     border-radius: 7px;
@@ -320,9 +325,10 @@ audio:focus {
 }
 
 .answer-sheet-container {
+    margin-top: 20px;
+    height: 670px;
     padding: 15px;
     overflow-y: auto;
-    height: 600px;
 }
 
 .answer-sheet-container::-webkit-scrollbar {
@@ -346,4 +352,8 @@ audio:focus {
 
 .index {
     font-weight: bold;
+}
+
+.result-container {
+    display: none;
 }

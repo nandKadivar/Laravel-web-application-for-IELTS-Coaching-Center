@@ -33,10 +33,10 @@ Reading Test
         </div>
         <div class="col-md-4 d-flex flex-column align-items-center" style="background-color: #f5f5f5">
             <div class="col-md-10 d-flex flex-row align-items-center justify-content-between" style="padding-top: 20px">
-                <div class="menu-btn active">
+                <div class="menu-btn active" id="1" onclick="showQuestion()">
                     <span class="menu-btn-text">Question</span>
                 </div>
-                <div class="menu-btn">
+                <div class="menu-btn" id="2" onclick="showResult()">
                     <span class="menu-btn-text">Result & Feedback</span>
                 </div>
                 <div class="menu-btn">
@@ -48,7 +48,7 @@ Reading Test
                     <source src="/ielts-tests/listening/ielts-practice-listening-test_section-1-audio.mp3" type="audio/mpeg">
                 </audio>
             </div> --}}
-            <div class="col-md-10 d-flex flex-column align-items-center justify-content-start answer-sheet-container" style="margin-top: 20px; height: 670px;">
+            <div class="answer-sheet-container" id="div1">
                 <form action="#" autocomplete="off">
                     @csrf
                     <div class="d-flex flex-row align-items-center justify-content-between" style="width: 100%;">
@@ -274,6 +274,10 @@ Reading Test
                         <input class="btn btn-danger mt-3" style="width: 100%; height: 40px;" type="submit" value="Hand over">
                     </div>
                 </form>
+            </div>
+
+            <div id="div2" style="result-container">
+                Hiii
             </div>
         </div>
     </main>

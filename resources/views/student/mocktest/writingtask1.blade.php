@@ -33,17 +33,17 @@ Writing Task 1
         </div>
         <div class="col-md-4 d-flex flex-column align-items-center" style="background-color: #f5f5f5">
             <div class="col-md-10 d-flex flex-row align-items-center justify-content-between" style="padding-top: 20px">
-                <div class="menu-btn active">
+                <div class="menu-btn active" id="1" onclick="showQuestion()">
                     <span class="menu-btn-text">Question</span>
                 </div>
-                <div class="menu-btn">
+                <div class="menu-btn" id="2" onclick="showResult()">
                     <span class="menu-btn-text">Result & Feedback</span>
                 </div>
                 <div class="menu-btn">
                     <span class="menu-btn-text">00:00</span>
                 </div>
             </div>
-            <div class="col-md-10 d-flex flex-column align-items-center justify-content-start question-card" style="margin-top: 20px">
+            <div class="col-md-10 question-card" id="div1" style="margin-top: 20px">
                 <div class="instruction-container">
                     <p class="instruction">
                         You should spend about 20 minutes on this task. Write about the chart/table below. You should write at least 150 words.
@@ -57,6 +57,10 @@ Writing Task 1
                 <div class="question-image-container">
                     <img src="/media/images/writing-task-1/1.jpg" class="question-image" style="width: 100%;height:100%" />
                 </div>
+            </div>
+
+            <div id="div2" style="result-container">
+                Hiii
             </div>
         </div>
     </main>
