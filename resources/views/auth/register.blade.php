@@ -7,7 +7,8 @@ Register
 @section('content')
     <main class="row col-md-12">
         <div class="col-md-8 illustration-container" style="background-color: #fff">
-            
+            <img src="/media/logos/register.svg" style="width: 300px;height:300px;" />
+            <img src="/media/images/background/study-abroad-3.png" style="width: 500px;height:250px;" />
         </div>
         <div class="col-md-4 register-container">
             <form method="POST" action="{{ route('register') }}">
