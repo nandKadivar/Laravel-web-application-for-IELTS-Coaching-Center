@@ -5,7 +5,7 @@ Writing Task 1
 @endsection
 
 @section('content')
-    <main class="row col-md-12">
+    <main class="row col-md-12" onload="startTimer()">
         <div class="col-md-8" style="background-color: #fff">
             <div class="d-flex col-md-12 flex-row align-items-center" style="padding: 20px">
                 <nav aria-label="breadcrumb">
@@ -40,7 +40,9 @@ Writing Task 1
                     <span class="menu-btn-text">Result & Feedback</span>
                 </div>
                 <div class="menu-btn">
-                    <span class="menu-btn-text">00:00</span>
+                    <span class="menu-btn-text" id="min">20</span>
+                    <span class="menu-btn-text" id="timer">:</span>
+                    <span class="menu-btn-text" id="sec">00</span>
                 </div>
             </div>
             <div class="col-md-10 question-card" id="div1" style="margin-top: 20px">
@@ -64,4 +66,27 @@ Writing Task 1
             </div>
         </div>
     </main>
+
+    <script>
+        // function startTimer(){
+            var m = document.getElementById('min').innerHTML;
+            var s = document.getElementById('sec').innerHTML;
+            // alert(m);
+            setInterval(function(){
+                if(s==00 && m==00){
+                    alert('Time up');
+                }
+                else if(s==00 && m>=01){
+                    s=59;
+                    m-=1;
+                    document.getElementById('min').innerHTML = m.toString().padStart(2,"0"); 
+                    document.getElementById('sec').innerHTML = s.toString().padStart(2,"0"); 
+                }
+                else{
+                    s-=1;
+                    document.getElementById('sec').innerHTML = s.toString().padStart(2,"0"); 
+                }
+            },1000)
+        // }
+    </script>
 @endsection
