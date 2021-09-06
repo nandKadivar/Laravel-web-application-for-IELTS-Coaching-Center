@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'ielts_module',
-        'planning_country'
+        'planning_country',
+        'is_admin'
     ];
 
     /**

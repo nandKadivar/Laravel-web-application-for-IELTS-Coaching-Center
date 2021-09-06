@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,5 @@ Route::get('/mock-test/listening-task',function () {
 Route::get('/mock-test/reading-task',function () {
     return view('student.mocktest.readingtask');
 })->middleware('auth');
+
+Route::get('admin/home','HomeController')->name('admin.home')->middleware('is_admin');
