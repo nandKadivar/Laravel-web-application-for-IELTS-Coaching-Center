@@ -41,4 +41,4 @@ Route::get('/mock-test/reading-task',function () {
     return view('student.mocktest.readingtask');
 })->middleware('auth');
 
-Route::get('admin/home','HomeController')->name('admin.home')->middleware('is_admin');
+Route::get('admin/home',[HomeController::class,'index'])->name('admin.home')->middleware('is_admin');
