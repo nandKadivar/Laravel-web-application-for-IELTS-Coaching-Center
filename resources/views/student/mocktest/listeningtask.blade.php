@@ -279,7 +279,16 @@ Listening Test
             </div>
 
             <div id="div2" style="result-container">
-                Hiii
+                <div class="set-size charts-container">
+                    <div class="pie-wrapper progress-60 style-2">
+                      <span class="label">7.5<span class="smaller"></span></span>
+                      <div class="pie">
+                        <div class="left-side half-circle"></div>
+                        <div class="right-side half-circle"></div>
+                      </div>
+                      <div class="shadow"></div>
+                    </div>
+                  </div>
             </div>
         </div>
     </main>
@@ -291,7 +300,7 @@ Listening Test
             // alert(m);
             setInterval(function(){
                 if(s==00 && m==00){
-                    alert('Time up');
+                    // alert('Time up');
                     document.getElementById("listening-test").submit();
                 }
                 else if(s==00 && m>=01){
