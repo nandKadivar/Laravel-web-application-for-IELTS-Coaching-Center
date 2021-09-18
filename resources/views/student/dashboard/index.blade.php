@@ -21,7 +21,7 @@ Dashboard
             
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#"><i class="fas fa-id-card-alt" style="color: #797979"></i> Profile</a>
-                <a class="dropdown-item" href="{{ route('student.logout') }}"><i class="fas fa-sign-out-alt" style="color: #797979"></i> Logout</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt" style="color: #797979"></i> Logout</a>
             </div>
         </div>
     </div>
