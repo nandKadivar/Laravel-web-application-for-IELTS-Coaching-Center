@@ -27,9 +27,9 @@ Classes
               </ul>
               <div>
                 <div class="btn-wrapper">
-                  <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
-                  <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
-                  <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                  {{-- <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
+                  <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a> --}}
+                  <a href="#" class="btn btn-primary text-white me-0"><i class="mdi mdi-plus"></i> Initiate Online Lecture</a>
                 </div>
               </div>
             </div>
@@ -72,6 +72,56 @@ Classes
                     </div>
                   </div>
                 </div> 
+                <div class="row">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                            <tr>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                            <tr>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                            <tr>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="row">
                   <div class="col-lg-8 d-flex flex-column">
                     <div class="row flex-grow">
@@ -735,10 +785,10 @@ Classes
     <!-- partial:partials/_footer.html -->
     <footer class="footer">
       <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">IELTS Organization</span>
         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
       </div>
     </footer>
     <!-- partial -->
-  </div>
+</div>
 @endsection
