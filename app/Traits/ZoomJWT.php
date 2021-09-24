@@ -56,11 +56,11 @@ trait ZoomJWT {
         $body = [
             'headers' => $this->headers,
             'body' => json_encode([
-                'topic' => 'IELTS Listening Class',
+                'topic' => $data['topic'],
                 'type' => 2,
                 'start_time' => $this->toZoomTimeFormat('2020-07-31T13:00:00'),
-                'duration' => 30,
-                'agenda' => 'agenda 1',
+                'duration' => $data['duration'],
+                'agenda' => $data['agenda'],
                 'timezone' => 'Asia/Kolkata',
                 'settings' => [
                     'host_video' => false,
@@ -136,11 +136,31 @@ trait ZoomJWT {
         ];
     }
 
+    public function listZoom(){
+        $url = $this->retriveZoomUrl();
+        $path = 'users/me/meetings';
+        $this->jwt = $this->generateZoomToken();
+        
+        $body = [
+            'headers' => $this->headers,
+            'body'    => json_encode([]),
+        ];
+
+        $response =  $this->client->get($url.$path, $body);
+
+        return [
+            'success' => $response->getStatusCode() === 204,
+            'data'    => json_decode($response->getBody(), true),
+        ];
+
+    }
+
     public function getZoom($id)
     {
         $url = $this->retrieveZoomUrl();
         $path = 'meetings/'.$id;
         $this->jwt = $this->generateZoomToken();
+        
         $body = [
             'headers' => $this->headers,
             'body'    => json_encode([]),

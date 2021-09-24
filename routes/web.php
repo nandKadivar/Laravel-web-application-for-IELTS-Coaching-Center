@@ -60,6 +60,7 @@ Route::get('admin/classes',function(){
     return view('admin.pages.classes');
 })->name('admin.classes')->middleware('auth')->middleware('is_admin');
 
+// Route::get('admin/classes',[MeetingController::class, 'list'])->name('admin.classes')->middleware('auth')->middleware('is_admin');
 // Route::get('admin/dashboard', function(){
 //     return view('admin.index');
 // });

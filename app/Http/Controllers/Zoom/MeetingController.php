@@ -36,6 +36,13 @@ class MeetingController extends Controller
     // public function update(Request $request, string $id) { /**/ }
     // public function delete(Request $request, string $id) { /**/ }
 
+    public function list(){
+        $meetingList = $this->listZoom();
+
+        return view('admin.pages.classes', compact('meetingList'));
+        // return view('admin.pages.classes', ['list' => $meetingList]);
+    }
+    
     public function show($id){
         $meeting = $this->getZoom($id);
 
@@ -45,7 +52,7 @@ class MeetingController extends Controller
     public function store(Request $request){
         $this->createZoom($request->all());
 
-        // return redirect()->route('meetings.index');
+        return redirect()->route('admin.classes')->with('status', 'Meeting Created Successfully');
     }
 
     public function update($meeting, Request $request){
