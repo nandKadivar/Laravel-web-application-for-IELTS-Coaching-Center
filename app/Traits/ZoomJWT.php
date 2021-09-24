@@ -56,15 +56,15 @@ trait ZoomJWT {
         $body = [
             'headers' => $this->headers,
             'body' => json_encode([
-                'topic' => $data['topic'],
-                'type' => $data['type'],
-                'start_time' => $this->toZoomTimeFormat($data['start_time']),
-                'duration' => $data['duration'],
-                'agenda' => (!empty($data['agenda'])) ? $data['agenda'] : null,
+                'topic' => 'IELTS Listening Class',
+                'type' => 2,
+                'start_time' => $this->toZoomTimeFormat('2020-07-31T13:00:00'),
+                'duration' => 30,
+                'agenda' => 'agenda 1',
                 'timezone' => 'Asia/Kolkata',
                 'settings' => [
-                    'host_video' => ($data['host_video'] == "1") ? true : false,
-                    'participant_video' => ($data['participant_video'] == "1") ? true : false,
+                    'host_video' => false,
+                    'participant_video' => false,
                     'waiting_room' => true,
                 ]
             ]),
@@ -77,6 +77,35 @@ trait ZoomJWT {
             'data' => json_encode($response->getBody(),true)
         ];
     }
+
+    // public function createZoom(array $data=[]){
+    //     $url = $this->retriveZoomUrl();
+    //     $path = 'users/me/meetings';
+
+    //     $body = [
+    //         'headers' => $this->headers,
+    //         'body' => json_encode([
+    //             'topic' => $data['topic'],
+    //             'type' => $data['type'],
+    //             'start_time' => $this->toZoomTimeFormat($data['start_time']),
+    //             'duration' => $data['duration'],
+    //             'agenda' => (!empty($data['agenda'])) ? $data['agenda'] : null,
+    //             'timezone' => 'Asia/Kolkata',
+    //             'settings' => [
+    //                 'host_video' => ($data['host_video'] == "1") ? true : false,
+    //                 'participant_video' => ($data['participant_video'] == "1") ? true : false,
+    //                 'waiting_room' => true,
+    //             ]
+    //         ]),
+    //     ];
+
+    //     $response = $this->client->post($url.$path,$body);
+
+    //     return [
+    //         'success' => $response->getStatusCode() === 201,
+    //         'data' => json_encode($response->getBody(),true)
+    //     ];
+    // }
 
     public function updateZoom($id,$data){
         $url = $this->retriveZoomUrl();
@@ -162,12 +191,12 @@ trait ZoomJWT {
     //     return $request->patch($url . $path, $body);
     // }
 
-    public function zoomCreate(array $data=[]){
-        $path = 'users/me/meetings';
-        $url = $this->retriveZoomUrl();
+    // public function zoomCreate(array $data=[]){
+    //     $path = 'users/me/meetings';
+    //     $url = $this->retriveZoomUrl();
 
-        $body = [
-            'headers' => $this->headers,
-        ];
-    }
+    //     $body = [
+    //         'headers' => $this->headers,
+    //     ];
+    // }
 }

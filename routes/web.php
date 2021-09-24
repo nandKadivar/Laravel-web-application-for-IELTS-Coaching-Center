@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Zoom\MeetingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,15 @@ Route::get('admin/classes',function(){
 // Route::get('admin/dashboard', function(){
 //     return view('admin.index');
 // });
+
+
+// Get list of meetings.
+Route::get('/meetings',[MeetingController::class,'show']);
+
+// Create meeting room using topic, agenda, start_time.
+Route::post('/meetings', [MeetingController::class,'store']);
+
+// Get information of the meeting room by ID.
+Route::get('/meetings/{id}', 'Zoom\MeetingController@show')->where('id', '[0-9]+');
+Route::patch('/meetings/{id}', 'Zoom\MeetingController@update')->where('id', '[0-9]+');
+Route::delete('/meetings/{id}', 'Zoom\MeetingController@destroy')->where('id', '[0-9]+');
