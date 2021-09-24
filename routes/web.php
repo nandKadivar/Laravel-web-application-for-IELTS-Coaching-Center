@@ -56,11 +56,11 @@ Route::get('admin/mock-test/create-writing-test',function(){
     return view('admin.mocktest.create.writing.index');
 })->name('mocktest.create.writing')->middleware('auth')->middleware('is_admin');
 
-Route::get('admin/classes',function(){
-    return view('admin.pages.classes');
-})->name('admin.classes')->middleware('auth')->middleware('is_admin');
+// Route::get('admin/classes',function(){
+//     return view('admin.pages.classes');
+// })->name('admin.classes')->middleware('auth')->middleware('is_admin');
 
-// Route::get('admin/classes',[MeetingController::class, 'list'])->name('admin.classes')->middleware('auth')->middleware('is_admin');
+Route::get('admin/classes',[MeetingController::class, 'list'])->name('admin.classes')->middleware('auth')->middleware('is_admin');
 // Route::get('admin/dashboard', function(){
 //     return view('admin.index');
 // });

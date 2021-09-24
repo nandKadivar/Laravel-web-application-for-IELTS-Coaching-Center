@@ -20,10 +20,10 @@ Classes
             <div class="d-sm-flex align-items-center justify-content-between border-bottom">
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                  <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Revenue</a>
+                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-selected="false">Completed</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Performance</a>
@@ -118,7 +118,7 @@ Classes
               </div>
             </div>
             <div class="tab-content tab-content-basic">
-              <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+              <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming"> 
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="statistics-details d-flex align-items-center justify-content-between">
@@ -161,49 +161,65 @@ Classes
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
+                                <th>Id</th>
+                                <th>Topic</th>
+                                <th>Agenda</th>
+                                <th>Duration</th>
+                                <th>Creation time</th>
+                                <th>Start time</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
+                            @foreach($meetingList['data']['meetings'] as $meeting)
+                              <tr>
+                                <td>{{$meeting['id']}}</td>
+                                <td>{{$meeting['topic']}}</td>
+                                <td>{{$meeting['agenda']}}</td>
+                                <td>{{$meeting['duration']}}</td>
+                                <td>{{$meeting['created_at']}}</td>
+                                <td>{{$meeting['start_time']}}</td>
+                                <td>
+                                  <a type="button" href="{{$meeting['join_url']}}" class="btn btn-primary btn-icon-text" style='color: #fff'>
+                                    <i class="ti-control-play btn-icon-prepend"></i>
+                                    Start
+                                  </a>
+                                  <button type="button" class="btn btn-outline-warning btn-icon-text">
+                                    <i class="ti-pencil btn-icon-prepend"></i>
+                                  </button>
+                                  <button type="button" class="btn btn-outline-danger btn-icon-text">
+                                    <i class="ti-trash  btn-icon-prepend"></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            @endforeach
+                            {{-- <tr>
+                              <td>1</td>
+                              <td>Speaking</td>
+                              <td>Cue card</td>
+                              <td>Data</td>
+                              <td>Data</td>
                             </tr>
                             <tr>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
+                              <td>1</td>
+                              <td>Speaking</td>
+                              <td>Cue card</td>
+                              <td>Data</td>
+                              <td>Data</td>
                             </tr>
                             <tr>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
+                              <td>1</td>
+                              <td>Speaking</td>
+                              <td>Cue card</td>
+                              <td>Data</td>
+                              <td>Data</td>
                             </tr>
                             <tr>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                                <td>Data</td>
-                            </tr>
+                              <td>1</td>
+                              <td>Speaking</td>
+                              <td>Cue card</td>
+                              <td>Data</td>
+                              <td>Data</td>
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
@@ -861,8 +877,10 @@ Classes
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade show" id="audiences" role="tabpanel" aria-labelledby="audiences">
-                Hiii
+              <div class="tab-pane fade show" id="completed" role="tabpanel" aria-labelledby="completed">
+                <div class='col-md-12 d-flex flex-row align-items-center justify-content-between' style='background-color: #fff; padding: 10px;'>
+                  Hiii
+                </div>
               </div>
             </div>
           </div>
