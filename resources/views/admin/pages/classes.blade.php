@@ -10,10 +10,9 @@ Classes
       @if(session()->has('status'))
         <h1>{{session()->get('status')}}</h1>
       @endif
-      {{-- <h1>{{$meetingList}}</h1> --}}
-      {{-- @php
-        print_r($meetingList['data']['total_records']);
-      @endphp --}}
+      {{-- <div class="toast-alert" style='height: 40px; padding: 10px;background-color: #4caf50;position: absolute; bottom: 10px; left: 50%;z-index: 10'>
+        Meeting Created Successfully!
+      </div> --}}
       <div class="row">
         <div class="col-sm-12">
           <div class="home-tab">
@@ -186,11 +185,53 @@ Classes
                                   <button type="button" class="btn btn-outline-warning btn-icon-text">
                                     <i class="ti-pencil btn-icon-prepend"></i>
                                   </button>
-                                  <button type="button" class="btn btn-outline-danger btn-icon-text">
+                                  <button type="button" class="btn btn-outline-danger btn-icon-text" data-toggle="modal" data-target="#deleteModal{{$loop->index}}">
                                     <i class="ti-trash  btn-icon-prepend"></i>
                                   </button>
                                 </td>
                               </tr>
+                              <div class="modal fade bd-example-modal" id="deleteModal{{$loop->index}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{$loop->index}}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="col-md-12 grid-margin stretch-card">
+                                        <div class="card" style="box-shadow: 0 0 0; border-radius: 0px">
+                                          <div class="card-body">
+                                            <h4 class="card-title">Delete meeting with id</h4>
+                                            <p class="card-description">
+                                              {{$meeting['id']}}
+                                            </p>
+                                            <form class="forms-sample" method="post" action="{{route('admin.destroy.meeting', $meeting['id'])}}">
+                                              @csrf
+                                              @method('DELETE')
+
+                                              <button type="submit" class="btn btn-danger btn-icon-text" style="color: #fff">
+                                                <i class="ti-trash btn-icon-prepend"></i>                                                    
+                                                Delete
+                                              </button>
+                                              {{-- <button type="submit" class="btn btn-primary btn-icon-text" style="color: #fff">
+                                                Create Meeting
+                                              </button> --}}
+                                              {{-- <button type="submit" class="btn btn-primary me-2">Create</button> --}}
+                                              {{-- <button type="reset" class="btn btn-light close">Cancel</button> --}}
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {{-- <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div> --}}
+                                  </div>
+                                </div>
+                              </div>
                             @endforeach
                             {{-- <tr>
                               <td>1</td>
@@ -900,5 +941,11 @@ Classes
 
 <script>
   document.getElementById('schedule-group').style.display="none";
+  $(document).ready(function(){
+    $('.toast').toast('show');
+  });
+
+  Notiflix.Notify.Init({ fontFamily:"Quicksand",useGoogleFont:true,position:"right-bottom",closeButton:true, }); 
+  Notiflix.Notify.Success('Sol lucet omnibus');
 </script>
 @endsection

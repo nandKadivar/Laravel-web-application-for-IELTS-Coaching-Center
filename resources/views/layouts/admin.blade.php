@@ -21,6 +21,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link href="{{asset('css/vertical-layout-light/style.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('notiflix/notiflix-2.7.0.min.css')}}" rel="stylesheet" type="text/css">
   <!-- endinject -->
   <link href="{{asset('images/favicon.png')}}" rel="shortcut icon">
 
@@ -529,6 +530,8 @@
   <script src="{{asset('js/admin/template.js')}}"></script>
   <script src="{{asset('js/admin/settings.js')}}"></script>
   <script src="{{asset('js/admin/todolist.js')}}"></script>
+  <script src="{{asset('notiflix/notiflix-2.7.0.min.js')}}"></script>
+  <script src="{{asset('notiflix/notiflix-aio-2.7.0.min.js')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{asset('js/admin/dashboard.js')}}"></script>

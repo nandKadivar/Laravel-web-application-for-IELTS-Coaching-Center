@@ -157,7 +157,7 @@ trait ZoomJWT {
 
     public function getZoom($id)
     {
-        $url = $this->retrieveZoomUrl();
+        $url = $this->retriveZoomUrl();
         $path = 'meetings/'.$id;
         $this->jwt = $this->generateZoomToken();
         
@@ -176,7 +176,7 @@ trait ZoomJWT {
 
     public function deleteZoom($id)
     {
-        $url = $this->retrieveZoomUrl();
+        $url = $this->retriveZoomUrl();
         $path = 'meetings/'.$id;
         $body = [
             'headers' => $this->headers,

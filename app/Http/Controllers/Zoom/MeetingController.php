@@ -61,9 +61,10 @@ class MeetingController extends Controller
         return redirect()->route('meetings.index');
     }
 
-    public function destroy($meeting){
-        $this->deleteZoom($meeting->id);
+    public function destroy($id){
+        $this->deleteZoom($id);
 
-        return $this->sendSuccess('Meeting deleted successfully.');
+        return redirect()->route('admin.classes')->with('status','Meeting Deleted Successfully');
+        // return $this->sendSuccess('Meeting deleted successfully.');
     }
 }
