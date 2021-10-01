@@ -62,6 +62,9 @@ Route::get('admin/mock-test/create-writing-test',function(){
 
 Route::get('admin/classes',[MeetingController::class, 'list'])->name('admin.classes')->middleware('auth')->middleware('is_admin');
 Route::delete('admin/classes/{id}',[MeetingController::class, 'destroy'])->name('admin.destroy.meeting')->where('id', '[0-9]+')->middleware('auth')->middleware('is_admin');
+Route::get('admin/mocktests', function(){
+    return view('admin.pages.mocktests');
+})->name('admin.mocktests')->middleware('auth')->middleware('is_admin');
 // Route::get('admin/dashboard', function(){
 //     return view('admin.index');
 // });

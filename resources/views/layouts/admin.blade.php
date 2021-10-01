@@ -398,7 +398,7 @@
 
           <li class="nav-item nav-category">Mock Test</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-bs-toggle="collapse" href="{{route('admin.mocktests')}}" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-view-list"></i>
               <span class="menu-title">Mock Test List</span>
             </a>
