@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Zoom\MeetingController;
+use App\Http\Controllers\Test\MockTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::get('admin/dashboard',[HomeController::class,'index'])->name('admin.home'
 Route::get('admin/mock-test/create-listening-test',function(){
     return view('admin.mocktest.create.listening.index');
 })->name('mocktest.create.listening')->middleware('auth')->middleware('is_admin');
+
+Route::post('admin/mock-test/create', [MockTestController::class, 'store'])->name('admin.create.mocktest')->middleware('auth')->middleware('is_admin');
 
 Route::get('admin/mock-test/create-reading-test',function(){
     return view('admin.mocktest.create.reading.index');

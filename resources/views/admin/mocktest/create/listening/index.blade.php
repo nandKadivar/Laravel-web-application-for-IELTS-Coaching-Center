@@ -49,17 +49,18 @@ Create Listening Mocke Test
                 <div class="row">
                     <h2 class='d-flex align-items-center'><i class="mdi mdi-headphones"></i> Listeing Test</h2>
                     <div class="row col-md-6">
-                        <form class="forms-sample" method="get" action="#">
+                        <form class="forms-sample" method="post" enctype="multipart/form-data" action="{{route('admin.create.mocktest')}}">
                             @csrf
                             <div class='d-flex col-md-12 flex-row align-items-center justify-content-between'>
                                 <div class="form-group">
                                   <label for="exampleInputUsername1">Mock Test Id</label>
-                                  <input type="text" class="form-control" id="exampleInputUsername1" name='id' value='215201' disabled>
+                                  <input type="text" class="form-control" id="exampleInputUsername1" name='id' value='{{uniqid()}}' readonly>
                                 </div>
     
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">Module</label>
-                                    <input type="text" class="form-control" id="exampleInputUsername1" name='module' value='Listening' disabled>
+                                    {{-- <input type="text" class="form-control" id="exampleInputUsername1" name='module' value='listening' hidden> --}}
+                                    <input type="text" class="form-control" id="exampleInputUsername1" name="module" value='Listening' readonly>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -79,6 +80,15 @@ Create Listening Mocke Test
                               <input type="file" class="form-control" style="background-color: #fff; color: #333" name='answer'>
                             </div>
                             {{-- <button type="submit" class="btn btn-primary me-2">Create</button> --}}
+                            @error('paper')
+                              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                            @error('audio')
+                              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                            @error('answer')
+                              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
                             <div class="d-flex col-md-12 flex-row align-items-center justify-content-between">
                                 <button type="reset" class="btn btn-light">Reset</button>
 
