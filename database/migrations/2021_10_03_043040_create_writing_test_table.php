@@ -14,7 +14,7 @@ class CreateWritingTestTable extends Migration
     public function up()
     {
         Schema::create('writing_test', function (Blueprint $table) {
-            $table->string('id',50)->primaryKey();
+            $table->string('id',50)->primary();
             $table->string('ielts_module');
             $table->string('test_desciption');
             $table->string('test_paper',1000);

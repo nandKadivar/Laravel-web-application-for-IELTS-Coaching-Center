@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Test\ListeningTest;
 use App\Models\Test\ReadingTest;
+use App\Models\Test\WritingTest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -15,10 +16,11 @@ class MockTestController extends Controller
     public function list(Request $request){
         $listeningTests =  ListeningTest::all();
         $readingTests = ReadingTest::all();
+        $writingTask1Tests = WritingTest::where('ielts_module','Writing Task 1')->get();
+        $writingTask2Tests = WritingTest::where('ielts_module','Writing Task 2')->get();
 
-
-        // echo $readingTests;
-        return view('admin.pages.mocktests',['listeningTestList' => $listeningTests, 'readingTestList' => $readingTests]);
+        // echo $writingTask1Tests;
+        return view('admin.pages.mocktests',['listeningTestList' => $listeningTests, 'readingTestList' => $readingTests, 'WritingTask1TestList' => $writingTask1Tests, 'WritingTask2TestList' => $writingTask2Tests]);
     }
     
     public function store(Request $request){
@@ -74,8 +76,66 @@ class MockTestController extends Controller
             $test->save();
 
             return redirect()->route('admin.mocktests')->with('status', 'Mock Test Created Successfully!');
-        }
-        else{
+        
+        }else if($request->module == 'Writing Task 1'){
+        
+            $request->validate([
+                'paper' => ['required', 'mimes:jpg,jpeg,png', 'max:2048'],
+                'sample_answer' => ['mimes:jpg,jpeg,png,pdf', 'max:2048']
+            ]);
+
+            $test = new WritingTest();
+
+            $test->id = $request->id;
+            $test->ielts_module = $request->module;
+            $test->test_desciption = $request->description;
+
+            $paper_extension = $request->file('paper')->extension();
+            $request->file('paper')->move('ielts-tests/writing/task 1/'.$request->id, 'writing_task1_paper_'.$request->id.'.'.$paper_extension);
+
+            $test->test_paper = 'ielts-tests/writing/task 1/'.$request->id.'/writing_task1_paper_'.$request->id.'.'.$paper_extension;
+
+            if($request->file('sample_answer')){
+                $sample_answer_extension = $request->file('sample_answer')->extension();
+                $request->file('sample_answer')->move('ielts-tests/writing/task 1/'.$request->id,'writing_task1_sample_answer_'.$request->id.'.'.$sample_answer_extension);
+                
+                $test->sample_answer = 'ielts-tests/writing/task 1/'.$request->id.'/writing_task1_sample_answer_'.$request->id.'.'.$sample_answer_extension;
+            }
+
+            $test->save();
+
+            return redirect()->route('admin.mocktests')->with('status', 'Mock Test Created Successfully!');
+
+        } else if($request->module == 'Writing Task 2'){
+            
+            $request->validate([
+                'paper' => ['required', 'mimes:jpg,jpeg,png', 'max:2048'],
+                'sample_answer' => ['mimes:jpg,jpeg,png,pdf', 'max:2048']
+            ]);
+
+            $test = new WritingTest();
+
+            $test->id = $request->id;
+            $test->ielts_module = $request->module;
+            $test->test_desciption = $request->description;
+
+            $paper_extension = $request->file('paper')->extension();
+            $request->file('paper')->move('ielts-tests/writing/task 2/'.$request->id,'writing_task2_paper_'.$request->id.'.'.$paper_extension);
+
+            $test->test_paper = 'ielts-tests/writing/task 2/'.$request->id.'/writing_task2_paper_'.$request->id.'.'.$paper_extension;
+
+            if($request->file('sample_answer')){
+                $sample_answer_extension = $request->file('sample_answer')->extension();
+                $request->file('sample_answer')->move('ielts-tests/writing/task 2/'.$request->id,'writing_task2_sample_answer_'.$request->id.'.'.$sample_answer_extension);
+                
+                $test->sample_answer = 'ielts-tests/writing/task 2/'.$request->id.'/writing_task2_sample_answer_'.$request->id.'.'.$sample_answer_extension;
+            }
+
+            $test->save();
+
+            return redirect()->route('admin.mocktests')->with('status', 'Mock Test Created Successfully!');
+
+        }else{
             echo "Error in detacting module";
         }
     }
@@ -141,15 +201,61 @@ class MockTestController extends Controller
 
             return redirect()->route('admin.mocktests')->with('status', 'Mock Test Updated Successfully!');
             
-        }else if($request->module == 'Reading') {
+        }else if($request->module == 'Writing Task 1') {
             
-            // echo $test;
-            // Storage::download('public/'.$test->test_paper);
+            $test = WritingTest::findOrFail($request->id);
+            
+            $request->validate([
+                'paper' => ['mimes:jpg,jpeg,png','max:2048'],
+                'sample_answer' => ['mimes:jpg,jpeg,png,pdf','max:2048']
+            ]);
+            
+            $test->test_desciption = $request->description;
 
+            if($request->file('paper')){
+                $paper_extension = $request->file('paper')->extension();
+                $request->file('paper')->move('ielts-tests/writing/task 1/'.$request->id, 'writing_task1_paper_'.$request->id.'.'.$paper_extension);
+                $test->test_paper = 'ielts-tests/writing/task 1/'.$request->id.'/writing_task1_paper_'.$request->id.'.'.$paper_extension;
+            }
+
+            if($request->file('sample_answer')){
+                $sample_answer_extension = $request->file('sample_answer')->extension();
+                $request->file('sample_answer')->move('ielts-tests/writing/task 1/'.$request->id,'writing_task1_sample_answer_'.$request->id.'.'.$sample_answer_extension);
+                $test->sample_answer = 'ielts-tests/writing/task 1/'.$request->id.'/writing_task1_sample_answer_'.$request->id.'.'.$sample_answer_extension;
+            }
             
+            $test->save();
+
             return redirect()->route('admin.mocktests')->with('status', 'Mock Test Updated Successfully!');
-        }
-        else{
+    
+        }else if($request->module == 'Writing Task 2'){
+            
+            $test = WritingTest::findOrFail($request->id);
+            
+            $request->validate([
+                'paper' => ['mimes:jpg,jpeg,png','max:2048'],
+                'sample_answer' => ['mimes:jpg,jpeg,png,pdf','max:2048']
+            ]);
+            
+            $test->test_desciption = $request->description;
+
+            if($request->file('paper')){
+                $paper_extension = $request->file('paper')->extension();
+                $request->file('paper')->move('ielts-tests/writing/task 2/'.$request->id, 'writing_task2_paper_'.$request->id.'.'.$paper_extension);
+                $test->test_paper = 'ielts-tests/writing/task 2/'.$request->id.'/writing_task2_paper_'.$request->id.'.'.$paper_extension;
+            }
+
+            if($request->file('sample_answer')){
+                $sample_answer_extension = $request->file('sample_answer')->extension();
+                $request->file('sample_answer')->move('ielts-tests/writing/task 2/'.$request->id,'writing_task2_sample_answer_'.$request->id.'.'.$sample_answer_extension);
+                $test->sample_answer = 'ielts-tests/writing/task 2/'.$request->id.'/writing_task2_sample_answer_'.$request->id.'.'.$sample_answer_extension;
+            }
+            
+            $test->save();
+
+            return redirect()->route('admin.mocktests')->with('status', 'Mock Test Updated Successfully!');
+        
+        }else{
             echo "Error in detacting module";
         }
     }
@@ -160,28 +266,51 @@ class MockTestController extends Controller
             $test = ListeningTest::findOrFail($id);
 
             if(File::exists(public_path('ielts-tests/listening/'.$test->id))){
-                echo "Delete";
+                // echo "Delete";
                 File::deleteDirectory(public_path('ielts-tests/listening/'.$test->id));
             }
 
             $test->delete();
 
             return redirect()->route('admin.mocktests')->with('status', 'Mock Test Deleted Successfully!');
+        
         }else if($module == 'Reading') {
             $test = ReadingTest::findOrFail($id);
 
             if(File::exists(public_path('ielts-tests/reading/'.$test->id))){
-                echo "Delete";
+                // echo "Delete";
                 File::deleteDirectory(public_path('ielts-tests/reading/'.$test->id));
             }
-            // echo $test;
-            // Storage::download('public/'.$test->test_paper);
 
             $test->delete();
 
             return redirect()->route('admin.mocktests')->with('status', 'Mock Test Deleted Successfully!');
-        }
-        else{
+
+        }else if($module == 'Writing Task 1'){
+            $test = WritingTest::findOrFail($id);
+
+            if(File::exists(public_path('ielts-tests/writing/task 1/'.$test->id))){
+                // echo "Delete";
+                File::deleteDirectory(public_path('ielts-tests/writing/task 1/'.$test->id));
+            }
+
+            $test->delete();
+
+            return redirect()->route('admin.mocktests')->with('status', 'Mock Test Deleted Successfully!');
+
+        }else if($module == 'Writing Task 2'){
+            $test = WritingTest::findOrFail($id);
+
+            if(File::exists(public_path('ielts-tests/writing/task 2/'.$test->id))){
+                // echo "Delete";
+                File::deleteDirectory(public_path('ielts-tests/writing/task 2/'.$test->id));
+            }
+
+            $test->delete();
+
+            return redirect()->route('admin.mocktests')->with('status', 'Mock Test Deleted Successfully!');
+
+        }else{
             echo "Error in detacting module";
         }
     }

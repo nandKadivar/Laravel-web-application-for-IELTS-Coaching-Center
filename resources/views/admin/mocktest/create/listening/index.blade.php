@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Create Listening Mocke Test
+Create Listening Mock Test
 @endsection
 
 @section('main-section')

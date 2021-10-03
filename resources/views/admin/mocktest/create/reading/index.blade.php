@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Create Reading Mocke Test
+Create Reading Mock Test
 @endsection
 
 @section('main-section')
@@ -16,7 +16,7 @@ Create Reading Mocke Test
             <div class="tab-content tab-content-basic">
               <div class="tab-pane fade show active" id="content" role="tabpanel" aria-labelledby="content"> 
                 <div class="row">
-                    <h2 class='d-flex align-items-center'><i class="mdi mdi-book "></i> Reading Test</h2>
+                    <h2 class='d-flex align-items-center'><i class="mdi mdi-book"></i> Reading Test</h2>
                     <div class="row col-md-6">
                         <form class="forms-sample" method="post" enctype="multipart/form-data" action="{{route('admin.create.mocktest')}}">
                             @csrf
