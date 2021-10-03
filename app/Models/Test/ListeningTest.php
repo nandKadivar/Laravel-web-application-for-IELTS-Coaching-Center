@@ -10,4 +10,7 @@ class ListeningTest extends Model
     use HasFactory;
 
     protected $table = 'listening_test';
+    protected $casts = [
+        'id' => 'string'
+    ];
 }

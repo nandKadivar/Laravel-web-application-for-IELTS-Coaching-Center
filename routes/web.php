@@ -65,9 +65,12 @@ Route::get('admin/mock-test/create-writing-test',function(){
 
 Route::get('admin/classes',[MeetingController::class, 'list'])->name('admin.classes')->middleware('auth')->middleware('is_admin');
 Route::delete('admin/classes/{id}',[MeetingController::class, 'destroy'])->name('admin.destroy.meeting')->where('id', '[0-9]+')->middleware('auth')->middleware('is_admin');
-Route::get('admin/mocktests', function(){
-    return view('admin.pages.mocktests');
-})->name('admin.mocktests')->middleware('auth')->middleware('is_admin');
+Route::get('admin/mocktests', [MockTestController::class,'list'])->name('admin.mocktests')->middleware('auth')->middleware('is_admin');
+Route::delete('admin/mocktest/{id}/{module}',[MockTestController::class, 'destroy'])->name('admin.destroy.mocktest')->middleware('auth')->middleware('is_admin');
+Route::post('admin/mock-test/update',[MockTestController::class, 'update'])->name('admin.update.mocktest')->middleware('auth')->middleware('is_admin');
+// Route::get('admin/mocktests', function(){
+//     return view('admin.pages.mocktests');
+// })->name('admin.mocktests')->middleware('auth')->middleware('is_admin');
 // Route::get('admin/dashboard', function(){
 //     return view('admin.index');
 // });
