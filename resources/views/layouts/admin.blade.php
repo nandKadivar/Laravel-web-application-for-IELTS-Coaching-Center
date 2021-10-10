@@ -25,6 +25,25 @@
   <!-- endinject -->
   <link href="{{asset('images/favicon.png')}}" rel="shortcut icon">
 
+
+
+
+
+
+
+
+
+  <!-- Google Font: Source Sans Pro -->
+  {{-- <link rel="stylesheet" href="{{asset('')}}https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> --}}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  <!-- Theme style -->
+  {{-- <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}"> --}}
+
 </head>
 <body>
   <div class="container-scroller"> 
@@ -561,24 +580,46 @@
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
   
-  <!-- Page specific script -->
+  <!-- Notify -->
+  <script src="{{asset('js/notify.js')}}"></script>
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script> --}}
   <script>
-      $(function () {
-          $("#example1").DataTable({
-              "responsive": true, "lengthChange": false, "autoWidth": false,
-              "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-          $('#example2').DataTable({
-              "paging": true,
-              "lengthChange": false,
-              "searching": false,
-              "ordering": false,
-              "info": true,
-              "autoWidth": false,
-              "responsive": true,
-          });
-      });
-</script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      
+      $("#example2").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+      
+      $("#example3").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+      
+      $("#example4").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example4_wrapper .col-md-6:eq(0)');
+    });
+
+    // $('#profile-tab').click(function() {
+    //   $("#example2").DataTable({
+    //     "responsive": true, "lengthChange": false, "autoWidth": false,
+    //     "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    //   }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+    // });
+
+    $('#alert').click(function() {
+      $.notify("Alert!", {
+	      align:"center",
+	      verticalAlign:"top"
+	    });
+    });
+  </script>
 </body>
 
 </html>

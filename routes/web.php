@@ -31,6 +31,10 @@ Route::get('/dashboard',function () {
 
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
+Route::get('/mock-test-dashboard', function(){
+    return view('student.mocktest.dashboard');
+})->name('student.mocktest.dashboard')->middleware('auth');
+
 Route::get('/mock-test/writing-task-1',function () {
     return view('student.mocktest.writingtask1');
 })->middleware('auth');

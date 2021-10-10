@@ -357,3 +357,41 @@ audio:focus {
 .result-container {
     display: none;
 }
+
+.mock-test-card {
+    padding: 20px;
+    width: 23%;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-right: 12px;
+    margin-top: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.mock-test-card:hover {
+    border: 2px solid #1F3BB3;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
+}
+
+.attend-test-btn {
+    cursor: pointer;
+    height: 37px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: background-color 0.5 ease-in-out;
+}
+
+.attend-test-btn-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.attend-test-btn:hover {
+    background-color: #1F3BB3;
+}
+
+.attend-test-btn:hover .attend-test-btn-text {
+    color: #fff;
+}

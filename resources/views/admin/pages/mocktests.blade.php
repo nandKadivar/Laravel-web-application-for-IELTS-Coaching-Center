@@ -13,6 +13,9 @@ Mock Tests
       {{-- <div class="toast-alert" style='height: 40px; padding: 10px;background-color: #4caf50;position: absolute; bottom: 10px; left: 50%;z-index: 10'>
         Meeting Created Successfully!
       </div> --}}
+      <input name="notif" id="alert" type="button" value="Shoow notif"/>
+
+      <div class="elem-demo">a Box</div>
       <div class="row">
         <div class="col-sm-12">
           <div class="home-tab">
@@ -112,8 +115,8 @@ Mock Tests
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Total Tests</p>
                         {{-- <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3> --}}
-                        <h3 class="rate-percentage">57</h3>
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p>
+                        <h3 class="rate-percentage">{{$listeningTestList->count()}}</h3>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
@@ -145,170 +148,167 @@ Mock Tests
                   </div>
                 </div>
                 <div class="row">
-                    {{-- <table id="example1" class="table table-bordered table-striped"> --}}
-                    <table id="" class="table table-bordered table-striped">
-                      <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Module</th>
-                            <th>Description</th>
-                            <th>Test PDF</th>
-                            <th>Audio File</th>
-                            <th>Answer Key</th>
-                            <th>Responses</th>
-                            <th>Creation Time</th>
-                            <th>Last Updated</th>
-                        </tr>
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Module</th>
+                        <th>Description</th>
+                        <th>Test PDF</th>
+                        <th>Audio File</th>
+                        <th>Answer Key</th>
+                        <th>Responses</th>
+                        <th>Creation Time</th>
+                        <th>Last Updated</th>
+                        <th>Action</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        {{-- @php 
-                          echo $readingTestList[0]['id'];
-                        @endphp --}}
-                        @foreach($listeningTestList as $i)
-                          <tr>
-                            <td>{{$i->id}}</td>
-                            <td>{{$i->ielts_module}}</td>
-                            <td>{{$i->test_desciption}}</td>
-                            <td>
-                              {{-- <a href="{{asset($i->test_paper)}}" target="_blank">listening_paper_{{$i->id}}.pdf</a> --}}
-                              <a href="{{asset($i->test_paper)}}" target="_blank"><i class="mdi mdi-file-pdf"></i> view</a>
-                            </td>
-                            <td>
-                              {{-- <a href="{{asset($i->audio_file)}}" target="_blank">listening_audio_{{$i->id}}.pdf</a> --}}
-                              <a href="{{asset($i->audio_file)}}" target="_blank"><i class="mdi mdi-library-music"></i> listen</a>
-                            </td>
-                            <td>
-                              {{-- <a href="{{asset($i->answer_key)}}" target="_blank">listening_answer_{{$i->id}}.pdf</a> --}}
-                              <a href="{{asset($i->answer_key)}}" target="_blank"><i class="mdi mdi-file-pdf"></i> view</a>
-                            </td>
-                            <td>5</td>
-                            <td>{{$i->created_at}}</td>
-                            <td>{{$i->updated_at}}</td>
-                            <td>
-                              {{-- <a type="button" href="" class="btn btn-primary btn-icon-text" style='color: #fff'>
-                                <i class="ti-control-play btn-icon-prepend"></i>
-                                Start
-                              </a> --}}
-                              <button type="button" class="btn btn-outline-warning btn-icon-text" data-toggle="modal" data-target="#editModal{{$i->id}}">
-                                <i class="ti-pencil btn-icon-prepend"></i>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger btn-icon-text" data-toggle="modal" data-target="#deleteModal{{$i->id}}">
-                                <i class="ti-trash  btn-icon-prepend"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <div class="modal fade bd-example-modal" id="deleteModal{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{$i->id}}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="col-md-12 grid-margin stretch-card">
-                                    <div class="card" style="box-shadow: 0 0 0; border-radius: 0px">
-                                      <div class="card-body">
-                                        <h4 class="card-title">Delete Listening Test with id</h4>
-                                        <p class="card-description">
-                                          {{$i->id}}
-                                        </p>
-                                        <form class="forms-sample" method="post" action="{{route('admin.destroy.mocktest', ['id' => $i->id, 'module' => $i->ielts_module])}}">
-                                          @csrf
-                                          @method('DELETE')
+                      @foreach($listeningTestList as $i)
+                        <tr>
+                          <td>{{$i->id}}</td>
+                          <td>{{$i->ielts_module}}</td>
+                          <td>{{$i->test_desciption}}</td>
+                          <td>
+                            {{-- <a href="{{asset($i->test_paper)}}" target="_blank">listening_paper_{{$i->id}}.pdf</a> --}}
+                            <a href="{{asset($i->test_paper)}}" target="_blank"><i class="mdi mdi-file-pdf"></i> view</a>
+                          </td>
+                          <td>
+                            {{-- <a href="{{asset($i->audio_file)}}" target="_blank">listening_audio_{{$i->id}}.pdf</a> --}}
+                            <a href="{{asset($i->audio_file)}}" target="_blank"><i class="mdi mdi-library-music"></i> listen</a>
+                          </td>
+                          <td>
+                            {{-- <a href="{{asset($i->answer_key)}}" target="_blank">listening_answer_{{$i->id}}.pdf</a> --}}
+                            <a href="{{asset($i->answer_key)}}" target="_blank"><i class="mdi mdi-file-pdf"></i> view</a>
+                          </td>
+                          <td>5</td>
+                          <td>{{$i->created_at}}</td>
+                          <td>{{$i->updated_at}}</td>
+                          <td>
+                            {{-- <a type="button" href="" class="btn btn-primary btn-icon-text" style='color: #fff'>
+                              <i class="ti-control-play btn-icon-prepend"></i>
+                              Start
+                            </a> --}}
+                            <button type="button" class="btn btn-outline-warning btn-icon-text" data-toggle="modal" data-target="#editModal{{$i->id}}">
+                              <i class="ti-pencil btn-icon-prepend"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger btn-icon-text" data-toggle="modal" data-target="#deleteModal{{$i->id}}">
+                              <i class="ti-trash  btn-icon-prepend"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <div class="modal fade bd-example-modal" id="deleteModal{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{$i->id}}" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="col-md-12 grid-margin stretch-card">
+                                  <div class="card" style="box-shadow: 0 0 0; border-radius: 0px">
+                                    <div class="card-body">
+                                      <h4 class="card-title">Delete Listening Test with id</h4>
+                                      <p class="card-description">
+                                        {{$i->id}}
+                                      </p>
+                                      <form class="forms-sample" method="post" action="{{route('admin.destroy.mocktest', ['id' => $i->id, 'module' => $i->ielts_module])}}">
+                                        @csrf
+                                        @method('DELETE')
 
-                                          <button type="submit" class="btn btn-danger btn-icon-text" style="color: #fff">
-                                            <i class="ti-trash btn-icon-prepend"></i>                                                    
-                                            Delete
+                                        <button type="submit" class="btn btn-danger btn-icon-text" style="color: #fff">
+                                          <i class="ti-trash btn-icon-prepend"></i>                                                    
+                                          Delete
+                                        </button>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal fade bd-example-modal" id="editModal{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{$i->id}}" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Listening Test</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="col-md-12 grid-margin stretch-card">
+                                  <div class="card" style="box-shadow: 0 0 0; border-radius: 0px">
+                                    <div class="card-body">
+                                      {{-- <h4 class="card-title">Listening Test </h4> --}}
+                                      {{-- <p class="card-description">
+                                        {{$i->id}}
+                                      </p> --}}
+                                      <form class="forms-sample" method="post" enctype="multipart/form-data" action="{{route('admin.update.mocktest')}}">
+                                        @csrf
+                                        
+                                        <div class='d-flex col-md-12 flex-row align-items-center justify-content-between'>
+                                          <div class="form-group">
+                                            <label for="exampleInputUsername1">Mock Test Id</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1" name='id' value='{{$i->id}}' readonly>
+                                          </div>
+              
+                                          <div class="form-group">
+                                              <label for="exampleInputUsername1">Module</label>
+                                              {{-- <input type="text" class="form-control" id="exampleInputUsername1" name='module' value='listening' hidden> --}}
+                                              <input type="text" class="form-control" id="exampleInputUsername1" name="module" value='Listening' readonly>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleInputUsername1">Description</label>
+                                          <input type="text" class="form-control" id="exampleInputUsername1" name='description' value="{{$i->test_desciption}}" placeholder="Test description">
+                                        </div>
+                                        {{-- @php
+                                          echo public_path('ielts-tests\listening\listening_paper_'.$i->id.'.pdf');
+                                        @endphp --}}
+                                        <div class="form-group">
+                                          <label for="exampleInputEmail1">Change Test Paper</label><br />
+                                          {{-- <label for="exampleInputEmail1">listening_paper_{{$i->id}}.pdf</label> --}}
+                                          <input type="file" class="form-control" style="background-color: #fff; color: #333" name='paper''>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Change Upload Audio</label>
+                                            <input type="file" class="form-control" style="background-color: #fff; color: #333" name='audio'>
+                                          </div>
+                                        <div class="form-group">
+                                          <label for="exampleInputEmail1">Change Answer Key</label>
+                                          <input type="file" class="form-control" style="background-color: #fff; color: #333" name='answer'>
+                                        </div>
+                                        {{-- <button type="submit" class="btn btn-primary me-2">Create</button> --}}
+                                        @error('paper')
+                                          <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                        @enderror
+                                        @error('audio')
+                                          <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                        @enderror
+                                        @error('answer')
+                                          <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                        @enderror
+                                        <div class="d-flex col-md-12 flex-row align-items-center justify-content-between">
+                                          <button type="reset" class="btn btn-light">Reset</button>
+          
+                                          <button type="submit" class="btn btn-primary btn-icon-text" style="color: #fff">
+                                            {{-- <i class=" btn-icon-prepend"></i> --}}
+                                            Update Test
                                           </button>
-                                        </form>
-                                      </div>
+                                        </div>
+                                      </form>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="modal fade bd-example-modal" id="editModal{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{$i->id}}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="deleteModalLabel">Listening Test</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="col-md-12 grid-margin stretch-card">
-                                    <div class="card" style="box-shadow: 0 0 0; border-radius: 0px">
-                                      <div class="card-body">
-                                        {{-- <h4 class="card-title">Listening Test </h4> --}}
-                                        {{-- <p class="card-description">
-                                          {{$i->id}}
-                                        </p> --}}
-                                        <form class="forms-sample" method="post" enctype="multipart/form-data" action="{{route('admin.update.mocktest')}}">
-                                          @csrf
-                                          
-                                          <div class='d-flex col-md-12 flex-row align-items-center justify-content-between'>
-                                            <div class="form-group">
-                                              <label for="exampleInputUsername1">Mock Test Id</label>
-                                              <input type="text" class="form-control" id="exampleInputUsername1" name='id' value='{{$i->id}}' readonly>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label for="exampleInputUsername1">Module</label>
-                                                {{-- <input type="text" class="form-control" id="exampleInputUsername1" name='module' value='listening' hidden> --}}
-                                                <input type="text" class="form-control" id="exampleInputUsername1" name="module" value='Listening' readonly>
-                                            </div>
-                                          </div>
-                                          <div class="form-group">
-                                            <label for="exampleInputUsername1">Description</label>
-                                            <input type="text" class="form-control" id="exampleInputUsername1" name='description' value="{{$i->test_desciption}}" placeholder="Test description">
-                                          </div>
-                                          {{-- @php
-                                            echo public_path('ielts-tests\listening\listening_paper_'.$i->id.'.pdf');
-                                          @endphp --}}
-                                          <div class="form-group">
-                                            <label for="exampleInputEmail1">Change Test Paper</label><br />
-                                            {{-- <label for="exampleInputEmail1">listening_paper_{{$i->id}}.pdf</label> --}}
-                                            <input type="file" class="form-control" style="background-color: #fff; color: #333" name='paper''>
-                                          </div>
-                                          <div class="form-group">
-                                              <label for="exampleInputEmail1">Change Upload Audio</label>
-                                              <input type="file" class="form-control" style="background-color: #fff; color: #333" name='audio'>
-                                            </div>
-                                          <div class="form-group">
-                                            <label for="exampleInputEmail1">Change Answer Key</label>
-                                            <input type="file" class="form-control" style="background-color: #fff; color: #333" name='answer'>
-                                          </div>
-                                          {{-- <button type="submit" class="btn btn-primary me-2">Create</button> --}}
-                                          @error('paper')
-                                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                          @enderror
-                                          @error('audio')
-                                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                          @enderror
-                                          @error('answer')
-                                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                          @enderror
-                                          <div class="d-flex col-md-12 flex-row align-items-center justify-content-between">
-                                            <button type="reset" class="btn btn-light">Reset</button>
-            
-                                            <button type="submit" class="btn btn-primary btn-icon-text" style="color: #fff">
-                                              {{-- <i class=" btn-icon-prepend"></i> --}}
-                                              Update Test
-                                            </button>
-                                          </div>
-                                        </form>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        @endforeach
+                        </div>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -320,8 +320,8 @@ Mock Tests
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Total Tests</p>
                         {{-- <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3> --}}
-                        <h3 class="rate-percentage">57</h3>
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p>
+                        <h3 class="rate-percentage">{{$readingTestList->count()}}</h3>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
@@ -354,7 +354,7 @@ Mock Tests
                 </div>
                 <div class="row">
                   {{-- <table id="example1" class="table table-bordered table-striped"> --}}
-                  <table id="" class="table table-bordered table-striped">
+                  <table id="example2" class="table table-bordered table-striped">
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -365,6 +365,7 @@ Mock Tests
                           <th>Responses</th>
                           <th>Creation Time</th>
                           <th>Last Updated</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -513,8 +514,8 @@ Mock Tests
                           <div class="d-flex flex-column align-items-center">
                           <p class="statistics-title">Total Tests</p>
                           {{-- <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3> --}}
-                          <h3 class="rate-percentage">57</h3>
-                          <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p>
+                          <h3 class="rate-percentage">{{$WritingTask1TestList->count()}}</h3>
+                          {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p> --}}
                           </div>
                           <div class="d-flex flex-column align-items-center">
                           <p class="statistics-title">Responses</p>
@@ -546,7 +547,7 @@ Mock Tests
                       </div>
                   </div>
                   <div class="row">
-                    <table id="" class="table table-bordered table-striped">
+                    <table id="example3" class="table table-bordered table-striped">
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -557,6 +558,7 @@ Mock Tests
                           <th>Responses</th>
                           <th>Creation Time</th>
                           <th>Last Updated</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -699,8 +701,8 @@ Mock Tests
                         <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Total Tests</p>
                         {{-- <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3> --}}
-                        <h3 class="rate-percentage">57</h3>
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p>
+                        <h3 class="rate-percentage">{{$WritingTask2TestList->count()}}</h3>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p> --}}
                         </div>
                         <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
@@ -732,7 +734,7 @@ Mock Tests
                     </div>
                 </div>
                 <div class="row">
-                  <table id="" class="table table-bordered table-striped">
+                  <table id="example4" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Id</th>
@@ -743,6 +745,7 @@ Mock Tests
                         <th>Responses</th>
                         <th>Creation Time</th>
                         <th>Last Updated</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -900,7 +903,8 @@ Mock Tests
     $('.toast').toast('show');
   });
 
-  Notiflix.Notify.Init({ fontFamily:"Quicksand",useGoogleFont:true,position:"right-bottom",closeButton:true, }); 
-  Notiflix.Notify.Success('Sol lucet omnibus');
+  // Notiflix.Notify.Init({ fontFamily:"Quicksand",useGoogleFont:true,position:"right-bottom",closeButton:true, }); 
+  // Notiflix.Notify.Success('Sol lucet omnibus');
+
 </script>
 @endsection
