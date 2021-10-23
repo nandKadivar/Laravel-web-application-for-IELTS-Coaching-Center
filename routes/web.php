@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Zoom\MeetingController;
 use App\Http\Controllers\Test\MockTestController;
+use App\Http\Controllers\Student\MockTestDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,21 +32,27 @@ Route::get('/dashboard',function () {
 
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/mock-test-dashboard', function(){
-    return view('student.mocktest.dashboard');
-})->name('student.mocktest.dashboard')->middleware('auth');
+Route::get('/mock-test-dashboard', [MockTestDashboardController::class, 'index'])->name('student.mocktest.dashboard')->middleware('auth');
 
-Route::get('/mock-test/writing-task-1',function () {
+// Route::get('/mock-test-dashboard', function(){
+//     return view('student.mocktest.dashboard');
+// })->name('student.mocktest.dashboard')->middleware('auth');
+
+Route::post('/mock-test/writing-task-1',function () {
     return view('student.mocktest.writingtask1');
-})->middleware('auth');
+})->name('student.writingtask1test')->middleware('auth');
 
-Route::get('/mock-test/listening-task',function () {
+Route::post('/mock-test/writing-task-2',function () {
+    return view('student.mocktest.writingtask2');
+})->name('student.writingtask2test')->middleware('auth');
+
+Route::post('/mock-test/listening-task/',function () {
     return view('student.mocktest.listeningtask');
-})->middleware('auth');
+})->name('student.listeningtest')->middleware('auth');
 
-Route::get('/mock-test/reading-task',function () {
+Route::post('/mock-test/reading-task',function () {
     return view('student.mocktest.readingtask');
-})->middleware('auth');
+})->name('student.readingtest')->middleware('auth');
 
 Route::get('admin/dashboard',[HomeController::class,'index'])->name('admin.home')->middleware('is_admin');
 

@@ -173,7 +173,8 @@ main {
 }
 
 .menu-btn.active {
-    background-color: #f13226;
+    /* background-color: #f13226; */
+    background-color: #1F3BB3;
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -358,6 +359,13 @@ audio:focus {
     display: none;
 }
 
+.mock-test-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .mock-test-card {
     padding: 20px;
     width: 23%;
@@ -393,5 +401,16 @@ audio:focus {
 }
 
 .attend-test-btn:hover .attend-test-btn-text {
+    color: #fff;
+}
+
+.mock-test-dashboard-menu {
+    padding: 6px;
+    border-radius: 5px;
+    transition: background-color 0.1s ease-in;
+}
+
+.mock-test-dashboard-menu.active {
+    background-color: #1F3BB3;
     color: #fff;
 }

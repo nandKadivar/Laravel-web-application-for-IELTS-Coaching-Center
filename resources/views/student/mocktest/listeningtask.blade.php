@@ -11,7 +11,7 @@ Listening Test
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/dashboard" style="color: #333">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="#" style="color: #333">Mock Test</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('student.mocktest.dashboard')}}" style="color: #333">Mock Test</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Listening Test</li>
                     </ol>
                 </nav>
@@ -28,7 +28,7 @@ Listening Test
                         <input class="btn btn-danger" type="submit" value="Hand over">
                     </div>
                 </form> --}}
-                <iframe src="/ielts-tests/listening/IELTS listening test 1.pdf" style="width: 100%; height: 670px;"></iframe>
+                <iframe src="/{{request()->p}}" style="width: 100%; height: 670px;"></iframe>
             </div>
         </div>
         <div class="col-md-4 d-flex flex-column align-items-center" style="background-color: #f5f5f5">
@@ -47,7 +47,7 @@ Listening Test
             </div>
             <div class="col-md-10 d-flex flex-row align-items-center justify-content-between" style="padding-top: 20px">
                 <audio controls>
-                    <source src="/ielts-tests/listening/ielts-practice-listening-test_section-1-audio.mp3" type="audio/mpeg">
+                    <source src="/{{request()->a}}" type="audio/mpeg">
                 </audio>
             </div>
             <div class="answer-sheet-container" id="div1" style="margin-top: 20px; height: 600px;">
@@ -273,7 +273,7 @@ Listening Test
                         </div>
                     </div>
                     <div style="width: 100%;">
-                        <input class="btn btn-danger mt-3" style="width: 100%; height: 40px;" type="submit" value="Hand over">
+                        <input class="btn btn-primary mt-3" style="width: 100%; height: 40px; background-color: #1F3BB3;" type="submit" value="Hand over">
                     </div>
                 </form>
             </div>

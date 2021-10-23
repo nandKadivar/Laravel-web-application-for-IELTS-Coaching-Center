@@ -12,7 +12,7 @@ Writing Task 1
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/dashboard" style="color: #333">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="{{route('student.mocktest.dashboard')}}" style="color: #333">Mock Test</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Writing Task 1</li>
+                    <li class="breadcrumb-item active" aria-current="page">Writing Task 2</li>
                     </ol>
                 </nav>
             </div>
@@ -39,7 +39,7 @@ Writing Task 1
                     <span class="menu-btn-text">Result & Feedback</span>
                 </div>
                 <div class="menu-btn">
-                    <span class="menu-btn-text" id="min">25</span>
+                    <span class="menu-btn-text" id="min">45</span>
                     <span class="menu-btn-text" id="timer">:</span>
                     <span class="menu-btn-text" id="sec">00</span>
                 </div>
@@ -47,13 +47,13 @@ Writing Task 1
             <div class="col-md-10 question-card" id="div1" style="margin-top: 20px">
                 <div class="instruction-container">
                     <p class="instruction">
-                        You should spend about 20 minutes on this task. Write about the chart/table below. You should write at least 150 words.
+                        You should spend about 40 minutes on this task. Write about the topic below. You should write at least 250 words.
                     </p>
                 </div>
                 <div class="question-container">
-                    <p class="question">
+                    {{-- <p class="question">
                         The two pie charts below show the online shopping sales for retail sectors in Canada in 2005 and 2010. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. <br> Write at least 150 words.
-                    </p>
+                    </p> --}}
                 </div>
                 <div class="question-image-container">
                     <img src="/{{request()->p}}" class="question-image" style="width: 100%;height:100%" />
