@@ -52,13 +52,14 @@ trait ZoomJWT {
     public function createZoom(array $data=[]){
         $url = $this->retriveZoomUrl();
         $path = 'users/me/meetings';
-
+        $schedule = $data['start_time'];
+        // echo $schedule;
         $body = [
             'headers' => $this->headers,
             'body' => json_encode([
                 'topic' => $data['topic'],
                 'type' => 2,
-                'start_time' => $this->toZoomTimeFormat('2020-07-31T13:00:00'),
+                'start_time' => $this->toZoomTimeFormat($schedule),
                 'duration' => $data['duration'],
                 'agenda' => $data['agenda'],
                 'timezone' => 'Asia/Kolkata',

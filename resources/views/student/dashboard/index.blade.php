@@ -58,7 +58,7 @@ Dashboard
                     <i class="fas fa-users" style="font-size: 35px; color: #4ec34a"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: arial; font-weight: 500;">Classes</p>
                 </div>
-                <div class="d-flex flex-row align-items-center justify-content-start card-1">
+                <div class="d-flex flex-row align-items-center justify-content-start card-1" onclick="window.location='{{ route("student.mocktest.dashboard") }}'">
                     <i class="fas fa-pencil-alt" style="font-size: 35px; color: #f13226"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; margin-bottom: 0; font-family: arial; font-weight: 500;">Mock Test</p>
                 </div>
@@ -78,7 +78,7 @@ Dashboard
                 </div>
             </div>
             <div class="mt-5 d-flex flex-row flex-wrap align-items-center justify-content-between col-md-12">
-                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4c6ef4">
+                <div class="d-flex flex-row align-items-center justify-content-start col-md-3 card-4" style="background-color: #4c6ef4" onclick="window.location='https://t.me/ieltsxpressdotcom'">
                     <i class="fab fa-telegram" style="font-size: 45px; color: #fff"></i>
                     <p style="font-size: 25px;margin-left: 20px; margin-bottom: 0; font-family: Dancing Script; font-weight: bold; color: #fff">Join Community</p>
                 </div>
@@ -89,11 +89,14 @@ Dashboard
             </div>
         </div>
         <div class="d-flex flex-column align-items-center col-md-4" style="height: 500px">
-            <div class="d-flex align-items-center justify-content-center col-md-12" style="height: 200px;">
-                <div class="d-flex flex-row align-items-center justify-content-center attend-live-class-btn">
-                    <span class="attend-live-class-btn-text">Attend Live Class Now !</span>
+            @foreach($meetingList['data']['meetings'] as $meeting)
+                <div class="d-flex align-items-center justify-content-center col-md-12" style="height: 200px;">
+                    <div class="d-flex flex-row align-items-center justify-content-center attend-live-class-btn" onclick="window.location='{{ $meeting['join_url'] }}'">
+                        <span class="attend-live-class-btn-text">Attend Live Class Now !</span>
+                    </div>
                 </div>
-            </div>
+                @break
+            @endforeach
             <div class="d-flex flex-row align-items-center justify-content-between col-md-12 py-4">
                 <div style="color: #808080; font-size: 18px;">Materials</div>
                 <div class="" style="border-top: 1px solid #808080ab; width: 83%; margin-top: 5px;">
@@ -129,6 +132,10 @@ Dashboard
         </div>
     </div>
 </section>
+{{-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-54349325-a9b7-4a2a-8839-0c0ee1e5e2c0"></div> --}}
+{{-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-97d394a4-fe30-405e-808e-b93b0396baa5"></div> --}}
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

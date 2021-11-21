@@ -42,6 +42,13 @@ class MeetingController extends Controller
         return view('admin.pages.classes', compact('meetingList'));
         // return view('admin.pages.classes', ['list' => $meetingList]);
     }
+
+    public function dashboard(){
+        $meetingList = $this->listZoom();
+
+        return view('student.dashboard.index', compact('meetingList'));
+        // return view('admin.pages.classes', ['list' => $meetingList]);
+    }
     
     public function show($id){
         $meeting = $this->getZoom($id);

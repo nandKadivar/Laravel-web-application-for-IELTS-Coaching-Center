@@ -20,3 +20,5 @@ class MockTestDashboardController extends Controller
         return view('student.mocktest.dashboard',['listeningTestList' => $listeningTests, 'readingTestList' => $readingTests, 'WritingTask1TestList' => $writingTask1Tests, 'WritingTask2TestList' => $writingTask2Tests]);
     }
 }
+
+

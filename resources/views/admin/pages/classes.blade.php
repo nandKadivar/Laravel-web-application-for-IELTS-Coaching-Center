@@ -21,7 +21,7 @@ Classes
                 <li class="nav-item">
                   <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-selected="false">Completed</a>
                 </li>
                 <li class="nav-item">
@@ -29,7 +29,7 @@ Classes
                 </li>
                 <li class="nav-item">
                   <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
-                </li>
+                </li> --}}
               </ul>
               <div>
                 <div class="btn-wrapper" data-toggle="modal" data-target="#exampleModal">
@@ -76,12 +76,13 @@ Classes
                                 </div>
 
                                 <div class="form-group" id="schedule-group">
-                                  <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
+                                  {{-- <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
                                     <span class="input-group-addon input-group-prepend border-right">
                                       <span class="icon-calendar input-group-text calendar-icon"></span>
                                     </span>
                                     <input type="text" class="form-control">
-                                  </div>
+                                  </div> --}}
+                                  <input type="datetime-local" id="start_time" name="start_time" class="form-control" />
                                 </div>
 
                                 <div class="form-group">
@@ -123,27 +124,27 @@ Classes
                     <div class="statistics-details d-flex align-items-center justify-content-between">
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Total Meetings</p>
-                        {{-- <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3> --}}
-                        <h3 class="rate-percentage">4</h3>
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p>
+                        <h3 class="rate-percentage">{{$meetingList['data']['total_records']}}</h3>
+                        {{-- <h3 class="rate-percentage">4</h3> --}}
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-8</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Active Students</p>
-                        <h3 class="rate-percentage">83</h3>
-                        <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p>
+                        <h3 class="rate-percentage">10</h3>
+                        {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Appearing for Exam</p>
-                        <h3 class="rate-percentage">12</h3>
+                        <h3 class="rate-percentage">05</h3>
                         {{-- <p class="text-danger d-flex"><span></span></p> --}}
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p> --}}
                       </div>
                       {{-- <div class="d-none d-md-block">
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
                       </div> --}}
-                      <div class="d-flex flex-column align-items-center">
+                      {{-- <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">New Sessions</p>
                         <h3 class="rate-percentage">68.8</h3>
                         <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
@@ -152,7 +153,7 @@ Classes
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -175,8 +176,20 @@ Classes
                                 <td>{{$meeting['topic']}}</td>
                                 <td>{{$meeting['agenda']}}</td>
                                 <td>{{$meeting['duration']}}</td>
-                                <td>{{$meeting['created_at']}}</td>
-                                <td>{{$meeting['start_time']}}</td>
+                                <td>
+                                  @php
+                                    $date1 = new \DateTime($meeting['created_at']);
+                                    // $new_date1 = $date1;
+                                    echo $meeting['created_at'];
+                                  @endphp
+                                </td>
+                                <td>
+                                  @php
+                                    $date = new \DateTime($meeting['start_time']);
+                                    $new_date = $date->format('D, d M Y h:i A');
+                                    echo $new_date;
+                                  @endphp
+                                </td>
                                 <td>
                                   <a type="button" href="{{$meeting['join_url']}}" class="btn btn-primary btn-icon-text" style='color: #fff'>
                                     <i class="ti-control-play btn-icon-prepend"></i>
@@ -264,7 +277,7 @@ Classes
                         </tbody>
                     </table>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-lg-8 d-flex flex-column">
                     <div class="row flex-grow">
                       <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
@@ -916,11 +929,11 @@ Classes
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> --}}
               </div>
               <div class="tab-pane fade show" id="completed" role="tabpanel" aria-labelledby="completed">
                 <div class='col-md-12 d-flex flex-row align-items-center justify-content-between' style='background-color: #fff; padding: 10px;'>
-                  Hiii
+                  
                 </div>
               </div>
             </div>

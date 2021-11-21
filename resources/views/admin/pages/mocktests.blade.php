@@ -8,14 +8,14 @@ Mock Tests
 <div class="main-panel">
     <div class="content-wrapper">
       @if(session()->has('status'))
-        <h1>{{session()->get('status')}}</h1>
+        <h3>{{session()->get('status')}}</h3>
       @endif
       {{-- <div class="toast-alert" style='height: 40px; padding: 10px;background-color: #4caf50;position: absolute; bottom: 10px; left: 50%;z-index: 10'>
         Meeting Created Successfully!
       </div> --}}
-      <input name="notif" id="alert" type="button" value="Shoow notif"/>
+      {{-- <input name="notif" id="alert" type="button" value="Shoow notif"/> --}}
 
-      <div class="elem-demo">a Box</div>
+      {{-- <div class="elem-demo">a Box</div> --}}
       <div class="row">
         <div class="col-sm-12">
           <div class="home-tab">
@@ -120,21 +120,21 @@ Mock Tests
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
-                        <h3 class="rate-percentage">54</h3>
-                        <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p>
+                        <h3 class="rate-percentage">0</h3>
+                        {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Evaluated</p>
-                        <h3 class="rate-percentage">54</h3>
+                        <h3 class="rate-percentage">0</h3>
                         {{-- <p class="text-danger d-flex"><span></span></p> --}}
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p> --}}
                       </div>
                       {{-- <div class="d-none d-md-block">
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
                       </div> --}}
-                      <div class="d-flex flex-column align-items-center">
+                      {{-- <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">New Sessions</p>
                         <h3 class="rate-percentage">68.8</h3>
                         <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
@@ -143,7 +143,7 @@ Mock Tests
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -325,21 +325,21 @@ Mock Tests
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
-                        <h3 class="rate-percentage">54</h3>
-                        <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p>
+                        <h3 class="rate-percentage">0</h3>
+                        {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p> --}}
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Evaluated</p>
-                        <h3 class="rate-percentage">54</h3>
+                        <h3 class="rate-percentage">0</h3>
                         {{-- <p class="text-danger d-flex"><span></span></p> --}}
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p> --}}
                       </div>
                       {{-- <div class="d-none d-md-block">
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
                       </div> --}}
-                      <div class="d-flex flex-column align-items-center">
+                      {{-- <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">New Sessions</p>
                         <h3 class="rate-percentage">68.8</h3>
                         <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
@@ -348,7 +348,7 @@ Mock Tests
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -519,21 +519,21 @@ Mock Tests
                           </div>
                           <div class="d-flex flex-column align-items-center">
                           <p class="statistics-title">Responses</p>
-                          <h3 class="rate-percentage">54</h3>
-                          <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p>
+                          <h3 class="rate-percentage">0</h3>
+                          {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p> --}}
                           </div>
                           <div class="d-flex flex-column align-items-center">
                           <p class="statistics-title">Evaluated</p>
-                          <h3 class="rate-percentage">54</h3>
+                          <h3 class="rate-percentage">0</h3>
                           {{-- <p class="text-danger d-flex"><span></span></p> --}}
-                          <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p>
+                          {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p> --}}
                           </div>
                           {{-- <div class="d-none d-md-block">
                           <p class="statistics-title">Avg. Time on Site</p>
                           <h3 class="rate-percentage">2m:35s</h3>
                           <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
                           </div> --}}
-                          <div class="d-flex flex-column align-items-center">
+                          {{-- <div class="d-flex flex-column align-items-center">
                           <p class="statistics-title">New Sessions</p>
                           <h3 class="rate-percentage">68.8</h3>
                           <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
@@ -542,7 +542,7 @@ Mock Tests
                           <p class="statistics-title">Avg. Time on Site</p>
                           <h3 class="rate-percentage">2m:35s</h3>
                           <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                          </div>
+                          </div> --}}
                       </div>
                       </div>
                   </div>
@@ -706,21 +706,21 @@ Mock Tests
                         </div>
                         <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Responses</p>
-                        <h3 class="rate-percentage">54</h3>
-                        <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p>
+                        <h3 class="rate-percentage">0</h3>
+                        {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+17</span></p> --}}
                         </div>
                         <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">Evaluated</p>
-                        <h3 class="rate-percentage">54</h3>
+                        <h3 class="rate-percentage">0</h3>
                         {{-- <p class="text-danger d-flex"><span></span></p> --}}
-                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p>
+                        {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2</span></p> --}}
                         </div>
                         {{-- <div class="d-none d-md-block">
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
                         </div> --}}
-                        <div class="d-flex flex-column align-items-center">
+                        {{-- <div class="d-flex flex-column align-items-center">
                         <p class="statistics-title">New Sessions</p>
                         <h3 class="rate-percentage">68.8</h3>
                         <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
@@ -729,7 +729,7 @@ Mock Tests
                         <p class="statistics-title">Avg. Time on Site</p>
                         <h3 class="rate-percentage">2m:35s</h3>
                         <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                        </div>
+                        </div> --}}
                     </div>
                     </div>
                 </div>

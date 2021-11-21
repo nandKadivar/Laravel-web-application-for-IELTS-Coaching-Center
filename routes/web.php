@@ -26,9 +26,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard',function () {
-    return view('student.dashboard.index');
-})->name('dashboard')->middleware('auth');
+// Route::get('/dashboard',function () {
+//     return view('student.dashboard.index');
+// })->name('dashboard')->middleware('auth');
+
+Route::get('/dashboard', [MeetingController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
